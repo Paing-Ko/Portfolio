@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paing Phyo Ko</title>
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+
+</head>
+
+
+<body>
+
+    <div class="terminal">
+        <nav class="navbar">
+            <div class="nav-left">
+                <a href="index.html" class="nav-item"><img src="images/avatar.png" alt="Paing avatar"
+                        id="avatar">_paing(π=3.14)</a>
+            </div>
+            <div class="nav-center">
+                <a href="index.html" class="nav-item">_hello</a>
+                <a href="about.html" class="nav-item">_about-me</a>
+                <a href="projects.html" class="nav-item">_projects</a>
+            </div>
+            <div class="nav-right">
+                <a href="contact.html" class="nav-item active">_contact-me</a>
+            </div>
+        </nav>
+
+
+        <section id="contact">
+            <div class="main-content">
+                <div class="left-sidebar">
+                    <div class="dropdown contact-dropdown">
+                        <button class="dropdown-btn"><span>contacts</span></button>
+                        <div class="dropdown-content">
+                            <a href="mailto:paing.ko.dev@gmail.com"><i class="fa-solid fa-envelope"></i>
+                                paing.ko.dev@gmail.com</a>
+                            <a href="tel:+447491544081"><i class="fa-solid fa-mobile-screen-button"></i>
+                                +447491544081</a>
+                        </div>
+                    </div>
+                    <div class="dropdown social-dropdown">
+                        <button class="dropdown-btn"><span>find-me-also-on</span></button>
+                        <div class="dropdown-content">
+                            <a href="#" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                LinkedIn</a>
+                            <a href="#" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                GitHub</a>
+                            <a href="#" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                Twitter</a>
+                            <!-- Add other social links with the same pattern -->
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="contact-form">
+                    <form action="#" method="post" id="contactForm"> <!-- Added ID for JS targeting -->
+                        <div class="form-field">
+                            <label for="name">_name</label>
+                            <input type="text" id="name" name="name" required>
+                            <span class="error-message" id="nameError">[This field is required]</span>
+                        </div>
+                        <div class="form-field">
+                            <label for="email">_email</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message" id="emailError">[This field is required]</span>
+                            <!-- Corrected ID -->
+                        </div>
+                        <div class="form-field">
+                            <label for="message">_message</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                            <span class="error-message" id="messageError">[This field is required]</span>
+                            <!-- Corrected ID -->
+                        </div>
+                        <div class="form-field">
+                            <input type="submit" value="submit-message">
+                        </div>
+                    </form>
+                </div>
+
+                <div class="code-snippet">
+                    <pre><code>
+<ol class="code-snippet">
+    <li><span class="keyword">const</span> <span class="variable">message</span> = {</li>
+    <li>    <span class="property">name</span>: <span class="string">""</span>,</li>
+    <li>    <span class="property">email</span>: <span class="string">""</span>,</li>
+    <li>    <span class="property">message</span>: <span class="string">""</span></li>
+    <li>}</li>
+    <li><span class="variable">button</span>.<span class="method">addEventListener</span>(<span class="string">'click'</span>, () => {</li>
+    <li>    <span class="variable">form</span>.<span class="method">send</span>(<span class="variable">message</span>);</li>
+    <li>})</li>
+    <li><span class="method">console</span>.<span class="method">log</span>(<span class="string">""</span>)</li>
+</ol>
+</code></pre>
+
+                </div>
+
+
+
+            </div>
+
+            <!-- Your about me content goes here -->
+        </section>
+
+
+
+        <footer>
+            <div class="social-media">
+                <span>find me in:</span>
+                <!-- Social media links -->
+                <a target="_blank" href="https://www.freecodecamp.org/Paing_Ko" class="footer-item">
+                    <i class="fab fa-free-code-camp"></i>
+                </a>
+
+                <a target="_blank" href="https://www.instagram.com/doc2dev/" class="footer-item">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a target="_blank" href="https://twitter.com/PaingPhyoKo" class="footer-item">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+                <a target="_blank" href="https://www.youtube.com/@paingpko" class="footer-item">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+
+
+
+                <a target="_blank" href="https://codepen.io/paingphyoko" class="footer-item">
+                    <i class="fa-brands fa-codepen"></i>
+                </a>
+
+                <a target="_blank" href="https://www.codewars.com/users/Paing-Phyo-Ko" class="footer-item">
+                    <iconify-icon icon="cib:codewars"></iconify-icon>
+                </a>
+
+            </div>
+            <div class="github-link-footer">
+                <a target="_blank" href="https://github.com/Paing-Ko" class="footer-item">Paing-Ko
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

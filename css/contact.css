@@ -1,0 +1,248 @@
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    align-items: start;
+    justify-content: center;
+}
+
+.main-content>div:first-child {
+    border-right: 0.1px solid rgb(62, 56, 56);
+    /* Adjust the color to fit your design */
+}
+/* Add a pseudo-element to the first child of the main-content to create a vertical line */
+
+
+/* Ensure the first child has a relative position for the absolute pseudo-element */
+.main-content>div:first-child {
+    position: relative;
+}
+
+.left-sidebar {
+    /* Styles for the left sidebar */
+    color: rgb(47, 159, 163);
+    width: 100%;
+}
+
+
+
+.dropdown {
+    border-bottom: 0.1px solid rgb(62, 56, 56);
+    /* Adjust the color to fit your design */
+    /* margin-bottom: 5px; */
+    /* Adds some space below the line */
+    padding-bottom: 5px;
+    /* Adds some space above the line */
+}
+
+
+
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    /* Initially hide dropdown content */
+    background: transparent;
+    padding: 10px;
+}
+
+/* Links inside the dropdown */
+/* Links inside the dropdown with Unicode symbols */
+.dropdown-content a {
+    color: rgb(47, 159, 163);
+    /* or any other color you prefer */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s ease;
+    /* Smooth transition for color change */
+}
+
+.dropdown-content a:before {
+    margin-right: 8px;
+    /* Adjust the space between symbol and text */
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    color: #ffffff;
+    /* Change to white on hover */
+}
+
+
+
+
+
+.dropdown-btn {
+    display: flex;
+    /* Use flexbox to align items */
+    align-items: center;
+    /* Align items vertically in the center */
+    justify-content: flex-start;
+    /* Align content to the left */
+    cursor: pointer;
+    padding: 5px;
+    width: 100%;
+    background: transparent;
+    font-family: 'Consolas', 'Monaco', monospace;
+    color: #fff;
+    border: none;
+    font-size: 1.1em;
+    outline: none;
+}
+
+.dropdown-btn span {
+    margin-left: 10px;
+    margin-bottom: -5px;
+    /* Adjust space between arrow and text */
+}
+
+.dropdown-btn::before {
+    content: '\25B6';
+    font-size: 1.2em;
+    transition: transform 0.2s ease-in-out;
+    /* No need for float property because of flexbox */
+}
+
+.dropdown-btn.active::before {
+    transform: rotate(90deg);
+    /* Rotate to right arrow */
+}
+
+/* Contact Page Specific Styles */
+/* Assuming your left-sidebar styles are complete and correct, we'll focus on the contact form */
+/* Contact Page Specific Styles */
+.contact-form {
+    font-family: 'Consolas', 'Monaco', monospace;
+    padding: 40px;
+    /* border-radius: 5px; */
+    margin: 10px auto;
+    margin-top: 100px;
+    min-width: 70%;
+    /* Adjust this as needed to control the form size */
+}
+
+.form-field {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-field label {
+    display: block;
+    color: rgb(143, 147, 148);
+    margin-bottom: 5px;
+}
+
+.form-field input,
+.form-field textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #333;
+    background-color: #000;
+    color: #E5E9F0;
+    border-radius: 3px;
+    outline: none;
+}
+
+.form-field .error-message {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    color: red;
+    font-size: 0.75em;
+    display: none;
+    /* Error messages hidden by default */
+}
+
+.form-field input[type="submit"] {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 1rem;
+    background-color: #0c0e24;
+    color: rgb(143, 147, 148);
+    border: 0.1px solid #333;
+    padding: 15px 30px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-field input[type="submit"]:hover {
+    /* background-color: #E5E9F0; */
+    color: rgb(47, 159, 163);
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+        margin: 20px;
+        padding: 20px;
+    }
+}
+
+/* Additional styles for responsiveness and aesthetics may be required */
+
+
+/* Add this to your CSS file */
+ol.code-snippet {
+    counter-reset: line;
+    list-style: none;
+    padding-left: 50px;
+    /* Adjust as needed for line number spacing */
+    margin-top: 150px;
+    /* background-color: #1e1e1e; */
+    /* Your preferred background color */
+    /* border-radius: 4px; */
+    /* Optional for rounded corners */
+    overflow-x: auto;
+    /* For horizontal scrolling if lines are too long */
+}
+
+ol.code-snippet li {
+    position: relative;
+    padding-left: 50px;
+    /* Adjust as needed for line number spacing */
+    margin: 0;
+    line-height: 0;
+    /* Adjust as needed for line height */
+    font-family: 'Consolas', 'Monaco', monospace;
+    white-space: nowrap;
+    /* Prevent wrapping of code */
+}
+
+ol.code-snippet li:before {
+    content: counter(line);
+    counter-increment: line;
+    position: absolute;
+    left: 0;
+    text-align: right;
+    width: 30px;
+    /* Adjust as needed for line number width */
+    margin-right: 10px;
+    /* Space between line numbers and code */
+    color: #7a7a7a;
+
+}
+
+/* Add your syntax highlighting colors here */
+.keyword {
+    color: #d656d2;
+}
+
+/* ... other styles */
+.variable {
+    color: green;
+}
+
+.property {
+    color: #4D5BCE;
+}
+
+.string {
+    color: #ce9178;
+}
+
+.method {
+    color: red;
+}

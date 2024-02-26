@@ -5,32 +5,156 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paing Phyo Ko</title>
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto&display=swap"
+        rel="stylesheet">
 
-    <link rel="icon" href="media/pk.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
 
-
-    <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
-    <div class="terminal">
-        <nav class="navbar">
-            <a href="#hello">hello</a>
-            <a href="#about-me">about-me</a>
-            <a href="#projects">projects</a>
-            <a href="#contact-me">contact-me</a>
-        </nav>
+
+    <div class="terminal halo">
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="index.html" class="nav-item"><img src="images/avatar.png" alt="Paing avatar"
+                    id="avatar">_paing(π=3.14)</a>
+        </div>
+        <div class="nav-center">
+            <a href="index.html" class="nav-item active">_hello</a>
+            <a href="about.html" class="nav-item">_about-me</a>
+            <a href="projects.html" class="nav-item">_projects</a>
+        </div>
+        <div class="nav-right">
+            <a href="contact.html" class="nav-item">_contact-me</a>
+        </div>
+    </nav>
+
         <div class="content">
-            <h1>Hi all. I am <span>Paing Phyo Ko</span></h1>
-            <p>// transforming ideas into digital reality</p>
-            <p>// browse my GitHub for innovative ideas and techniques</p>
-            <p class="github-link">const githubLink = "https://github.com/Paing-Ko"</p>
+            <div class="left-content">
+                <p class="greeting">Hello World! I'm</p>
+                <h1 class="name-highlight">Paing Phyo Ko</h1>
+
+                <h2 class="dynamic-text">> <span id="type-effect"></span></h2>
+                <p>// transforming ideas into digital reality</p>
+                <p>// browse my GitHub for innovative ideas and techniques</p>
+                <p class="github-link">
+                    <span class="keyword">const</span>
+                    <span class="variable">githubLink</span>
+                    <span class="operator">=</span>
+                    <span class="string">"https://github.com/Paing-Ko"</span>
+                </p>
+
+            </div>
+
+            <!-- Code snippets container -->
+            <div class="code-snippets-container carousel">
+                <!-- JavaScript Snippet -->
+                <div class="snippet" id="snippet-js">
+                    <pre><code>
+                <span class="code-comment">// JavaScript: Fetch data from an API and log the result</span>
+                <span class="code-keyword">async function</span> fetchData() {
+                  <span class="code-keyword">try</span> {
+                    <span class="code-keyword">const</span> response = <span class="code-keyword">await</span> fetch('<span class="code-string">https://api.example.com/data</span>');
+                    <span class="code-keyword">const</span> data = <span class="code-keyword">await</span> response.json();
+                    console.log(data);
+                  } <span class="code-keyword">catch</span> (error) {
+                    console.error(error);
+                  }
+                }
+                fetchData();
+                    </code></pre>
+                </div>
+
+                <!-- Python Snippet -->
+                <div class="snippet" id="snippet-python">
+                    <pre><code>
+                <span class="code-comment"># Python: A simple function to calculate Fibonacci numbers</span>
+                <span class="code-keyword">def</span> fibonacci(n):
+                  a, b = <span class="code-number">0</span>, <span class="code-number">1</span>
+                  <span class="code-keyword">for</span> _ <span class="code-keyword">in</span> <span class="code-function">range</span>(n):
+                    a, b = b, a + b
+                  <span class="code-keyword">return</span> a
+                
+                print(fibonacci(<span class="code-number">10</span>))
+                    </code></pre>
+                </div>
+
+                <!-- SQL Snippet -->
+                <div class="snippet" id="snippet-sql">
+                    <pre><code>
+                <span class="code-comment">-- SQL: Query to select the top 10 customers by total spend</span>
+                <span class="code-keyword">SELECT</span> customer_id, <span class="code-function">SUM</span>(amount) <span class="code-keyword">AS</span> total_spend
+                <span class="code-keyword">FROM</span> orders
+                <span class="code-keyword">GROUP BY</span> customer_id
+                <span class="code-keyword">ORDER BY</span> total_spend <span class="code-keyword">DESC</span>
+                <span class="code-keyword">LIMIT</span> <span class="code-number">10</span>;
+                    </code></pre>
+                </div>
+
+
+                <!-- Repeat for other snippets -->
+
+            </div>
         </div>
-        <div class="footer">
-            <p>find me in:</p>
-            <!-- Social media links here -->
-        </div>
+
+
     </div>
+
+
+
+
+    
+    <footer>
+        <div class="social-media">
+            <span>find me in:</span>
+            <!-- Social media links -->
+            <a target="_blank" href="https://www.freecodecamp.org/Paing_Ko" class="footer-item">
+                <i class="fab fa-free-code-camp"></i>
+            </a>
+
+            <a target="_blank" href="https://www.instagram.com/doc2dev/" class="footer-item">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a target="_blank" href="https://twitter.com/PaingPhyoKo" class="footer-item">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+
+            <a target="_blank" href="https://www.youtube.com/@paingpko" class="footer-item">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+
+
+
+            <a target="_blank" href="https://codepen.io/paingphyoko" class="footer-item">
+                <i class="fa-brands fa-codepen"></i>
+            </a>
+
+            <a target="_blank" href="https://www.codewars.com/users/Paing-Phyo-Ko" class="footer-item">
+                <iconify-icon icon="cib:codewars"></iconify-icon>
+            </a>
+
+        </div>
+        <div class="github-link-footer">
+            <a target="_blank" href="https://github.com/Paing-Ko" class="footer-item">Paing-Ko
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </footer>
+
+    </div>
+
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

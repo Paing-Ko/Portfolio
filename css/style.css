@@ -1,0 +1,479 @@
+* {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Consolas', 'Monaco', monospace;
+    background-color: black;
+    color: #E5E9F0;
+}
+
+
+
+.terminal {
+    box-sizing: border-box;
+    border: 0.1px solid rgb(62, 56, 56);
+    padding: 5px;
+    /* Ensure this matches your design needs */
+    margin: 0px 10px;
+    /* This centers the terminal if needed */
+    max-width: 100%;
+    height: 100%;
+
+    /* Adjust based on your layout */
+    background-color: #020319;
+    color: #E5E9F0;
+    
+}
+
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    height: 50px;
+    background-color: #020319;
+    color: #E5E9F0;
+    border: 0.1px solid rgb(62, 56, 56);
+
+}
+
+
+.navbar a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* This will center the text if the links have a fixed width */
+    height: 100%;
+    /* Set a height for vertical alignment */
+    color: rgb(143, 147, 148);
+    text-decoration: none;
+    margin: 0 10px;
+
+}
+
+.navbar a:hover {
+    color: #FD7E08;
+}
+
+
+.nav-item {
+    white-space: nowrap;
+    position: relative;
+    padding: 5px 20px 5px 0px;
+    /* Adjust top and bottom padding to vertically center */
+    line-height: 30px;
+    /* Adjust based on your design */
+    border-bottom: 2px solid transparent;
+    display: inline-flex;
+    /* Use inline-flex for alignment */
+    align-items: center;
+    /* Ensure text is centered vertically within the item */
+    justify-content: center;
+    /* Center content horizontally */
+    box-sizing: border-box;
+    position: relative;
+    color: #ffff;
+    text-decoration: none;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+
+.nav-left {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#avatar {
+    width: 50px;
+    height: auto;
+    margin: -50px 0 0 -20px;
+    transform: translateY(25px);
+    padding: 5px;
+}
+
+
+.nav-center {
+    /* Center content in the middle */
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.nav-center a {
+    margin: 0 10px;
+    /* Space out the nav links */
+}
+
+
+
+/* Add vertical separators after nav items except the last one */
+.nav-item:not(:last-child)::after,
+.footer-item:not(:last-child)::after {
+    content: '|';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(62, 56, 56);
+}
+
+.nav-right .nav-item:last-child,
+.github-link-footer .footer-item:last-child {
+    position: relative;
+    /* Needed to position the pseudo-elements */
+    padding-right: 0px;
+    /* Adjust as needed, adds space for the separator */
+}
+
+/* Add a separator before the last nav item */
+.nav-right .nav-item:last-child::before,
+.github-link-footer .footer-item::before {
+    content: '|';
+    position: absolute;
+    top: 0;
+    left: -15px;
+    /* Adjust as necessary based on your padding */
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(62, 56, 56);
+}
+
+
+.nav-left .nav-item::after,
+.nav-center .nav-item:last-child::after,
+.social-media .footer-item:last-child:after {
+    content: '|';
+    position: absolute;
+    top: 0;
+    right: 0px;
+    /* Adjust as necessary based on your padding */
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(62, 56, 56);
+}
+
+
+/* Styling for the active state, excluding the 'nav-left' nav item */
+.nav-item.active:not(.nav-left .nav-item) {
+    color: #FD7E08;
+    /* Orange text for active item */
+}
+
+
+
+.nav-item.active {
+    color: #FD7E08;
+    /* Orange text for active item */
+    box-shadow: 0px 2px 0px 0px #FD7E08;
+    /* Simulates an orange bar without affecting layout */
+    border-bottom-color: #FD7E08;
+}
+
+.footer-item {
+    white-space: nowrap;
+    position: relative;
+    /* Needed to position the pseudo-elements */
+    padding-right: 20px;
+    /* Adjust as needed, adds space for the separator */
+    cursor: pointer;
+    position: relative;
+    color: #ffff;
+    text-decoration: none;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+
+/* ###############GREETING#################### */
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+
+.halo {
+    background: radial-gradient(closest-side at 75% 50%,
+            #05350a,
+            rgb(3, 53, 48),
+            #020319 70%);
+}
+
+.left-content {
+    text-align: start;
+    padding: 30px;
+    margin-top: 125px;
+}
+
+.greeting {
+    color: #E5E9F0;
+    /* Or any other color you prefer */
+    font-size: 1em;
+    /* Smaller font size for the greeting */
+    text-align: left;
+    /* margin-left: 20px; */
+    /* Adjust as needed */
+    margin-bottom: 0;
+}
+
+.name-highlight {
+    font-family: 'Fira code', 'Monaco', monospace;
+    color: white;
+    /* Color for the name to stand out */
+    font-size: 3.5em;
+    /* Larger font size for the name */
+    text-align: left;
+    /* margin-left: 20px; */
+    /* Adjust as needed */
+    font-weight: bold;
+    /* If you want the name to be bold */
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+/* ... existing CSS ... */
+
+.typing-container {
+    display: inline-block;
+    margin-left: 4px;
+    overflow: hidden;
+    /* Ensures the content is clipped */
+    border-right: .1em solid #E5E9F0;
+    /* Cursor like solid line */
+    white-space: nowrap;
+    /* Keeps the content on a single line */
+    letter-spacing: .15em;
+    /* Adjust as needed */
+    animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
+}
+
+.dynamic-text {
+    /* margin-top: 0; */
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4D5BCE;
+    /* Add other styles as needed */
+    margin-bottom: 100px;
+}
+
+
+
+.cursor {
+    opacity: 1;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.github-link .keyword {
+    /* For the 'const' keyword */
+    color: #4D5BCE;
+    /* normal color */
+}
+
+.github-link .variable {
+    /* For the 'githubLink' variable */
+    color: #FD7E08;
+    /* green color */
+}
+
+.github-link .operator {
+    /* For the '=' operator */
+    color: #E5E9F0;
+    /* normal color, assuming your normal text color */
+}
+
+.github-link .string {
+    /* For the string with the link */
+   
+    color: #059613;
+    /* orange color */
+}
+
+
+/* ############FOOTER######### */
+footer {
+    margin: 5px;
+    padding: 10px;
+    bottom: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #020319;
+    color: #E5E9F0;
+    border: 0.1px solid rgb(62, 56, 56);
+    position: fixed;
+    width: calc(100% - 30px);
+    /* Adjust this to account for the new margin */
+    left: 10px;
+    /* Add this to align with the new .terminal margin */
+    right: 10px;
+
+}
+
+.social-media {
+    display: flex;
+    align-items: center;
+
+}
+
+.social-media span {
+    color: rgb(143, 147, 148);
+    margin-right: 10px;
+}
+
+.social-media a,
+.github-link-footer a {
+    color: rgb(143, 147, 148);
+    margin: 0 7px;
+    text-decoration: none;
+
+
+}
+
+
+
+.github-link-footer a {
+    display: flex;
+    align-items: center;
+}
+
+
+.social-media a:hover,
+.github-link-footer a:hover {
+    color: white;
+}
+
+.fa-github {
+    margin-left: 5px;
+}
+
+/* ------------------------------------------ */
+.carousel {
+    position: absolute;
+    top: 90%;
+    /* Adjust as needed */
+    left: 55%;
+    /* Adjust as needed */
+    transform: translate(-50%, -50%);
+    transform-style: preserve-3d;
+    width: 40vw;
+    /* Set a width for the carousel container */
+    height: 40vh;
+    /* Set a height for the carousel container */
+    perspective: 10000px;
+}
+
+.snippet {
+    position: absolute;
+    top: 0;
+    left: 50%; /* Align the left edge to the center of the carousel */
+    /* Start off the screen, so the snippets slide in from the bottom */
+    transform: translateX(-50%) translateZ(-300px) translateY(100vh); 
+    width: calc(100% - 50px); /* Full width minus some padding */
+    transition: transform 5s, opacity 5s;
+    /* Start completely transparent to ensure it's invisible */
+    opacity: 0; 
+}
+
+
+.snippet.active {
+    opacity: 1;
+    /* Full opacity for the active snippet */
+    transform: translateX(-50%) translateZ(0px);
+    /* Bring to the front */
+}
+
+.snippet.inactive {
+    opacity: 0.1;
+}
+
+/* Syntax highlighting styles */
+.code-comment {
+    color: #7ec699;
+}
+
+.code-keyword {
+    color: #569cd6;
+}
+
+.code-function {
+    color: #c586c0;
+}
+
+.code-string {
+    color: #ce9178;
+}
+
+.code-number {
+    color: #b5cea8;
+}
+
+/* Style for <pre> and <code> elements */
+.snippet pre {
+    margin: 0;
+    /* Remove default margin */
+    background-color: #0c120cd3;
+    /* Semi-transparent background */
+    border: none;
+    padding: 0;
+    /* Padding on the sides */
+    overflow-x: auto;
+    /* Allow horizontal scrolling */
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 0.8em;
+    /* Smaller font size for compact look */
+    border-radius: 4px;
+    /* Rounded corners for aesthetics */
+    border: 0.1px solid rgb(75, 88, 111);
+    /* Subtle border */
+}
+
+.snippet code {
+    display: block;
+    /* Ensure block-level display */
+    white-space: pre;
+    /* Preserve whitespaces and indentation */
+    color: #dcdcdc;
+    /* Off-white color for the text */
+    line-height: 1.3;
+    /* Adequate line spacing for readability */
+}
+
+/* Ensure the active snippet is visible and overlaps the others */
+.carousel>.snippet.active {
+    z-index: 1;
+}
+
+/* Ensure inactive snippets do not overlap the active one */
+.carousel>.snippet:not(.active) {
+    z-index: 0;
+}
+
+
+
+
+
+
