@@ -45,6 +45,9 @@
                 <div class="tab">
                     <button class="tablinks" onclick="openTab(event, 'Bio')"><i
                             class="fa-solid fa-folder-closed"></i>_Bio</button>
+                    <button class="tablinks" onclick="openTab(event, 'Learning')"><i
+                            class="fa-solid fa-folder-closed"></i>_Learning</button>
+
                     <button class="tablinks" onclick="openTab(event, 'Skills')"><i
                             class="fa-solid fa-folder-closed"></i>_Skills</button>
                     <button class="tablinks" onclick="openTab(event, 'Interests')"><i
@@ -98,154 +101,250 @@
 
 
 
-            <div id="Skills" class="tabcontent">
-                <div class="skills-grid">
-                    <!-- Each skill icon with a caption -->
-                    <div class="skill">
-                        <img src="./images/html5.svg" alt="HTML Icon" class="skill-icon" />
-                        <span class="skill-name">HTML</span>
+
+            <!--learning content here -->
+
+            <div id="Learning" class="tabcontent">
+                <div class="learning">
+                    <p class="learning-box">
+                        <span class="first-letter">Embarking</span><strong> my coding journey</strong>, I initially cut
+                        my
+                        teeth on Harvard's renowned CS50 course. It was this rigorous
+                        foundation that set the stage for my subsequent exploration into the realm of programming. As I
+                        am a
+                        fan of Prof.David J. Malan, I finished CS50x, CS50P, CS50T and started CS50W. Since I decided to
+                        apply for FAC programme, I worked hard to compete the tasks the applicants need to finish; I
+                        learnt
+                        basic HTML, CSS and Javascript on freeCodeCamp and MDN(including documents), and tried to reach
+                        6
+                        kyu rank on Codewars. Throughout this journey, I relied heavily on various online resources,
+                        including YouTube, W3Schools and with the help of mentors & peers from FAC meetups, of course. I
+                        also sought assistance from AI platforms such as ChatGPT, Bing & Bard to clarify my
+                        doubts and
+                        strengthen my understanding. I
+                        realized
+                        that I was focusing on coding skill and lack the latter two. Therefore, I have been
+                        participating in
+                        every FAC meetups and Code Reading Club Masterclass at Space4 regularly.
+                    </p>
+                    <div id="courses-table">
+                        <table>
+                            <tr>
+                                <th>Course</th>
+                                <th>Description</th>
+                                <th>Certificate</th>
+                            </tr>
+                            <tr>
+                                <td>CS50T</td>
+                                <td>CS50’s introduction to technology for students who don’t (yet!) consider themselves
+                                    computer
+                                    persons</td>
+                                <td><a href="./cert_projects/CS50T.png" target="_blank">See Certificate</a></td>
+                            </tr>
+                            <tr>
+                                <td>CS50x</td>
+                                <td>An introduction to the intellectual enterprises of computer science and the art of
+                                    programming</td>
+                                <td><a href="./cert_projects/CS50x.png" target="_blank">See Certificate</a></td>
+                            </tr>
+                            <tr>
+                                <td>CS50P</td>
+                                <td>An introduction to computer science with Python</td>
+                                <td><a href="./cert_projects/CS50P.png" target="_blank">See Certificate</a></td>
+                            </tr>
+                            <tr>
+                                <td>Udemy</td>
+                                <td>Web Development by Colt Steele</td>
+                                <td><a href="./cert_projects/ude.png" target="_blank">See Certificate</a></td>
+                            </tr>
+                            <tr>
+                                <td>freeCodeCamp</td>
+                                <td>Responsive Web Design</td>
+                                <td><a href="https://www.freecodecamp.org/certification/Paing_Ko/responsive-web-design"
+                                        target="_blank">See Certificate</a></td>
+                            </tr>
+                            <tr>
+                                <td>freeCodeCamp</td>
+                                <td>JavaScript Algorithms and Data Structures</td>
+                                <td><a href="https://www.freecodecamp.org/certification/Paing_Ko/javascript-algorithms-and-data-structures"
+                                        target="_blank">See Certificate</a></td>
+                            </tr>
+                            <tr>
+                                <td>OneTech</td>
+                                <td>Intro To Coding</td>
+                                <td><a href="./cert_projects/onetech.png" target="_blank">See Certificate</a></td>
+                            </tr>
+
+
+
+                        </table>
                     </div>
-                    <div class="skill">
-                        <img src="./images/css3.svg" alt="CSS Icon" class="skill-icon" />
-                        <span class="skill-name">CSS</span>
-                    </div>
-                    <div class="skill">
-                        <img src="./images/javascript.svg" alt="JavaScript Icon" class="skill-icon" />
-                        <span class="skill-name">JavaScript</span>
-                    </div>
-                    <div class="skill">
-                        <img src="./images/python.svg" alt="python Icon" class="skill-icon" />
-                        <span class="skill-name">Python</span>
-                    </div>
-                    <div class="skill">
-                        <img src="./images/sqlite.svg" alt="SQL Icon" class="skill-icon" />
-                        <span class="skill-name">SLQite</span>
-                    </div>
-                    <div class="skill">
-                        <img src="./images/visualstudiocode.svg" alt="VSC Icon" class="skill-icon" />
-                        <span class="skill-name">VSC</span>
-                    </div>
-                    <div class="skill">
-                        <img src="./images/git.svg" alt="Git Icon" class="skill-icon" />
-                        <span class="skill-name">Git</span>
-                    </div>
-                    <div class="skill">
-                        <img src="./images/github.svg" alt="Github Icon" class="skill-icon" />
-                        <span class="skill-name">Github</span>
-                    </div>
-                    <div class="skill">
-                        <img src="./images/amazonaws.svg" alt="AWS Icon" class="skill-icon" />
-                        <span class="skill-name">AWS</span>
-                    </div>
-                    <div class="skill">
-                        <img src="./images/openai.svg" alt="OpenAI Icon" class="skill-icon" />
-                        <span class="skill-name">OpenAI</span>
-                    </div>
-                    <div class="skill">
-                        <img src="./images/awsorganizations.svg" alt="AWS Icon" class="skill-icon" />
-                        <span class="skill-name">AWS</span>
-                    </div>
-                    <div class="skill">
-                        <img src="./images/discord.svg" alt="Discord Icon" class="skill-icon" />
-                        <span class="skill-name">Discord</span>
-                    </div>
-                    <div class="skill">
-                        <img src="./images/express.svg" alt="Express Icon" class="skill-icon" />
-                        <span class="skill-name">Express</span>
-                    </div>
-                    <div class="skill">
-                        <img src="./images/figma.svg" alt="Figma Icon" class="skill-icon" />
-                        <span class="skill-name">Figma</span>
-                    </div>
-                    <div class="skill">
-                        <img src="./images/flask.svg" alt="Flask Icon" class="skill-icon" />
-                        <span class="skill-name">Flask</span>
-                    </div>
-                    <div class="skill">
-                        <img src="./images/react.svg" alt="React Icon" class="skill-icon" />
-                        <span class="skill-name">React</span>
-                    </div>
-                    <div class="skill">
-                        <img src="./images/typescript.svg" alt="Typescript Icon" class="skill-icon" />
-                        <span class="skill-name">Typescript</span>
-                    </div>
-                    <div class="skill">
-                        <img src="./images/nodedotjs.svg" alt="Node Icon" class="skill-icon" />
-                        <span class="skill-name">Node</span>
-                    </div>
-                    <div class="skill">
-                        <img src="./images/canva.svg" alt="Canva Icon" class="skill-icon" />
-                        <span class="skill-name">Canva</span>
-                    </div>
-                    <div class="skill">
-                        <img src="./images/nodemon.svg" alt="Nodemon Icon" class="skill-icon" />
-                        <span class="skill-name">Nodemon</span>
-                    </div>
-                    <div class="skill">
-                        <img src="./images/npm.svg" alt="npm Icon" class="skill-icon" />
-                        <span class="skill-name">npm</span>
-                    </div>
-                    <div class="skill">
-                        <img src="./images/cssmodules.svg" alt="CSS modules Icon" class="skill-icon" />
-                        <span class="skill-name">CSS modules</span>
-                    </div>
-                 
-                    <!-- Add more skills as needed -->
+
+
+
                 </div>
 
-                <!-- Interests content here -->
             </div>
+
+            <div id="Skills" class="tabcontent">
+                <div class="skills">
+                    <!-- Languages -->
+                    <div class="skills-section">
+                        <h2>Web Development Skills</h2>
+                        <ul class="skills-list">
+                            <li><strong>Languages:</strong> <img src="./images/html5.svg" alt="html icon"
+                                    class="skill-icon" />,
+                                <img src="./images/css3.svg" alt="css icon" class="skill-icon" />, <img
+                                    src="./images/javascript.svg" alt="javascript icon" class="skill-icon" />, <img
+                                    src="./images/c.svg" alt="C icon" class="skill-icon" />,
+                                <img src="./images/python.svg" alt="python icon" class="skill-icon" />
+                            </li>
+                            <li><strong>Frameworks & Libraries:</strong> <img src="./images/react.svg" alt="react icon"
+                                    class="skill-icon" />, <img src="./images/bootstrap.svg" alt="bootstrap icon"
+                                    class="skill-icon" />, <img src="./images/tailwindcss.svg" alt="tailwindcss icon"
+                                    class="skill-icon" />, <img src="./images/flask.svg" alt="Flask icon"
+                                    class="skill-icon" />,
+                                <img src="./images/django.svg" alt="django icon" class="skill-icon" />
+                            </li>
+                            <li><strong>Version Control:</strong> <img src="./images/git.svg" alt="git icon"
+                                    class="skill-icon" />
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="skills-section">
+                        <h2>Technical Tools</h2>
+                        <ul class="skills-list">
+                            <li><strong>Database & Server Management:</strong> <img src="./images/database-sql.svg"
+                                    alt="sql icon" class="skill-icon" />,
+                                <img src="./images/mongodb.svg" alt="mongodb icon" class="skill-icon" />, <img
+                                    src="./images/server-solid.svg" alt="server icon" class="skill-icon" />
+                            </li>
+                            <li><strong>Deployment & Hosting:</strong> <img src="./images/amazonaws.svg" alt="aws icon"
+                                    class="skill-icon" />,
+                                <img src="./images/vercel.svg" alt="vercel icon" class="skill-icon" />, <img
+                                    src="./images/social-netlify.svg" alt="netlify icon" class="skill-icon" />
+                            </li>
+                            </li>
+                            <li><strong>API & Package Management:</strong> <img src="./images/api.svg" alt="API icon"
+                                    class="skill-icon" />, <img src="./images/npm.svg" alt="npm icon"
+                                    class="skill-icon" /></li>
+                        </ul>
+
+                    </div>
+                    <div class="skills-section">
+                        <h2>Current Learning</h2>
+                        <ul class="skills-list">
+                            <li><strong>Fullstack Development:</strong> MERN stack (<img src="./images/mongodb.svg"
+                                    alt="mongodb icon" class="skill-icon" />, <img src="./images/express.svg"
+                                    alt="express icon" class="skill-icon" />, <img src="./images/react.svg"
+                                    alt="react icon" class="skill-icon" />,
+                                <img src="./images/nodedotjs.svg" alt="nodejs icon" class="skill-icon" />)
+                            </li>
+                            <li><strong>AI & Machine Learning:</strong> <img src="./images/openai.svg" alt="openAI icon"
+                                    class="skill-icon" /></li>
+                        </ul>
+                    </div>
+                    <div class="skills-section">
+                        <h2>Additional Experience</h2>
+                        <ul class="skills-list">
+                            <li><strong>IDEs:</strong> <img src="./images/visualstudiocode.svg" alt="VSC icon"
+                                    class="skill-icon" />
+                            </li>
+                            <li><strong>Collaboration & Communication:</strong> <img src="./images/discord.svg"
+                                    alt="discord icon" class="skill-icon" />, <img src="./images/slack.svg"
+                                    alt="slack icon" class="skill-icon" />,
+                                <img src="./images/zoom.svg" alt="zoom icon" class="skill-icon" />,<img
+                                    src="./images/whatsapp.svg" alt="whatsapp icon" class="skill-icon" />
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <!-- Add other skill categories as needed -->
+            </div>
+
+
             <div id="Interests" class="tabcontent">
                 <div class="interests-grid">
                     <!-- Each skill icon with a caption -->
-                    <div class="interest">
-                        <img src="./images/cycling.gif" alt="cycling icon" class="interest-icon" />
-                        <span class="interest-name">Cycling</span>
-                    </div>
-                    <div class="interest">
-                        <img src="./images/football-player.gif" alt="football icon" class="interest-icon" />
-                        <span class="interest-name">Football</span>
-                    </div>
-                    <div class="interest">
-                        <img src="./images/running.gif" alt="running icon" class="interest-icon" />
-                        <span class="interest-name">Running</span>
-                    </div>
-                    <div class="interest">
-                        <img src="./images/badminton.gif" alt="badminton icon" class="interest-icon" />
-                        <span class="interest-name">Badminton</span>
-                    </div>
                     <div class="interest">
                         <img src="./images/healthcare.gif" alt="healthcare icon" class="interest-icon" />
                         <span class="interest-name">Healthcare</span>
                     </div>
                     <div class="interest">
-                        <img src="./images/yoga-pose.gif" alt="yoga icon" class="interest-icon" />
-                        <span class="interest-name">Yoga</span>
+                        <img src="./images/programmer.gif" alt="programmer icon" class="interest-icon" />
+                        <span class="interest-name">Technology</span>
                     </div>
                     <div class="interest">
-                        <img src="./images/route.gif" alt="hiking icon" class="interest-icon" />
-                        <span class="interest-name">Hiking</span>
-                    </div>
-                    <div class="interest">
-                        <img src="./images/swimmer.gif" alt="swimmer icon" class="interest-icon" />
-                        <span class="interest-name">Swimming</span>
-                    </div>
-                    <div class="interest">
-                        <img src="./images/tennis.gif" alt="tennis icon" class="interest-icon" />
-                        <span class="interest-name">Tennis</span>
-                    </div>
-                    <div class="interest">
-                        <img src="./images/video-camera.gif" alt="film icon" class="interest-icon" />
-                        <span class="interest-name">Films</span>
+                        <img src="./images/artificial-intelligence.gif" alt="AI icon" class="interest-icon" />
+                        <span class="interest-name">AI</span>
                     </div>
                     <div class="interest">
                         <img src="./images/open-book.gif" alt="book icon" class="interest-icon" />
                         <span class="interest-name">Reading</span>
                     </div>
                     <div class="interest">
+                        <img src="./images/landscape.gif" alt="landscape icon" class="interest-icon" />
+                        <span class="interest-name">Nature</span>
+                    </div>
+                    <div class="interest">
+                        <img src="./images/coffee-pot.gif" alt="moka pot icon" class="interest-icon" />
+                        <span class="interest-name">Moka pot</span>
+                    </div>
+                    <div class="interest">
+                        <img src="./images/coffee.gif" alt="coffee icon" class="interest-icon" />
+                        <span class="interest-name">Coffee</span>
+                    </div>
+                    <div class="interest">
+                        <img src="./images/camera.gif" alt="camera icon" class="interest-icon" />
+                        <span class="interest-name">Photography</span>
+                    </div>
+                    <div class="interest">
+                        <img src="./images/video-camera.gif" alt="film icon" class="interest-icon" />
+                        <span class="interest-name">Films</span>
+                    </div>
+                    <div class="interest">
+                        <img src="./images/fan.gif" alt="music icon" class="interest-icon" />
+                        <span class="interest-name">Music</span>
+                    </div>
+                    <div class="interest">
+                        <img src="./images/running.gif" alt="running icon" class="interest-icon" />
+                        <span class="interest-name">Running</span>
+                    </div>
+                    <div class="interest">
+                        <img src="./images/football-player.gif" alt="football icon" class="interest-icon" />
+                        <span class="interest-name">Football</span>
+                    </div>
+                    <div class="interest">
+                        <img src="./images/tennis.gif" alt="tennis icon" class="interest-icon" />
+                        <span class="interest-name">Tennis</span>
+                    </div>
+                    <div class="interest">
+                        <img src="./images/cycling.gif" alt="cycling icon" class="interest-icon" />
+                        <span class="interest-name">Cycling</span>
+                    </div>
+                    <div class="interest">
+                        <img src="./images/yoga-pose.gif" alt="yoga icon" class="interest-icon" />
+                        <span class="interest-name">Yoga</span>
+                    </div>
+                    <div class="interest">
                         <img src="./images/workout.gif" alt="workout icon" class="interest-icon" />
                         <span class="interest-name">Workout</span>
                     </div>
+                    <div class="interest">
+                        <img src="./images/badminton.gif" alt="badminton icon" class="interest-icon" />
+                        <span class="interest-name">Badminton</span>
+                    </div>
+                    <div class="interest">
+                        <img src="./images/swimmer.gif" alt="swimmer icon" class="interest-icon" />
+                        <span class="interest-name">Swimming</span>
+                    </div>
+                    <div class="interest">
+                        <img src="./images/route.gif" alt="hiking icon" class="interest-icon" />
+                        <span class="interest-name">Hiking</span>
+                    </div>
+
 
 
                     <!-- Add more skills as needed -->
@@ -253,6 +352,8 @@
 
                 <!-- Interests content here -->
             </div>
+
+
         </section>
 
 

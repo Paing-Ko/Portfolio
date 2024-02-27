@@ -22,6 +22,8 @@
     justify-content: center;
 }
 
+
+
 .tab button {
     background-color: inherit;
     border: none;
@@ -29,15 +31,15 @@
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
-    color: rgb(143, 147, 148);
+    color: white;
     font-size: 17px;
-    /* Removed float:left; you should avoid using float for layout, flex or grid is preferable */
+
 }
 
 
 .tab button:hover {
     /* background-color: #ddd; */
-    color: white;
+    color: #FD7E08;
 }
 
 .tab button:first-child.active {
@@ -46,14 +48,23 @@
 }
 
 /* Target the second .tab button */
+
 .tab button:nth-child(2).active {
+    background-color: #3498db;
+    color: black;
+}
+
+/* Target the second .tab button */
+.tab button:nth-child(3).active {
     background-color: white;
     color: black;
 }
 
+
+
 /* Target the last .tab button */
 .tab button:last-child.active {
-    background-color: #51a8b2;
+    background-color: #46cdd4;
     color: black;
 
 }
@@ -61,10 +72,10 @@
 .tabcontent {
     padding: 6px 12px;
     /* Adjust these values to reduce or increase padding */
+
     background-color: #0D0D0D;
-    background-color: white;
-    color: #E5E9F0;
     color: #0e2959;
+    color: #E5E9F0;
     display: none;
     /* Use flex to layout children */
     /* align-items: flex-start; */
@@ -78,6 +89,8 @@
     grid-template-columns: 2.5fr 1fr;
     align-items: start;
     justify-content: center;
+    max-height: 76vh;
+    overflow: auto;
 }
 
 /* Add your additional styling for Bio, Skills, and Interests here */
@@ -85,16 +98,18 @@
 
 .bio-text {
     font-family: 'Consolas', 'Monaco', monospace;
-    background-color: white;
+
+    background-color: #0D0D0D;
     white-space: pre-wrap;
     /* Preserves spacing and line breaks */
-    font-size: 1em;
+    font-size: 14px;
     /* Adjust to match your design */
-    color: black;
+
+    color: rgb(143, 147, 148);
     /* Text color, similar to the rest of your design */
     margin: 0;
     /* Removes default margin from <pre> */
-    padding: 50px;
+    padding: 25px;
     /* Padding inside the <pre> block */
     border-left: 3px solid #FD7E08;
     /* Left border for visual accent */
@@ -115,53 +130,149 @@
 
 /* ####################  SKILL  ############################# */
 
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 50px;
-    /* Adjust the space between items */
-    justify-items: center;
-    /* Center items horizontally */
-    align-items: center;
-    /* Center items vertically */
-    padding: 100px;
-    /* Add some padding around the grid */
-     border-left: 3px solid black;
-   
+
+
+#Skills {
+    /* padding: 6px 12px; */
+    background-color: #0D0D0D;
 }
 
-.skill {
+.skills {
     display: flex;
-    flex-direction: column;
-    /* Stack icon and text vertically */
-    align-items: center;
-    /* Center them horizontally */
-    text-align: center;
-    /* Center the text label */
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* Adjust this as needed */
+    border-left: 3px solid white;
+    height: 60vh;
+    overflow: auto;
+    padding-left: 10px;
+}
+
+.skills-section {
+    flex: 0 1 calc(50% - 100px);
+    /* Adjusted flex property */
+    margin: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    /* Ensures padding is included in the width calculation */
+    color: rgb(143, 147, 148);
+}
+
+.skills-section h2 {
+    color: #ddd;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.skills-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skills-list li {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.skills-list li strong {
+    font-size: 0.9em;
+
+    color: #0D0D0D;
+    color: rgb(143, 147, 148);
 }
 
 .skill-icon {
-    width: 50px;
+    width: 25px;
     /* Adjust the size as needed */
     height: auto;
     /* Maintain aspect ratio */
-    margin-bottom: 8px;
+    margin-bottom: -5px;
     /* Space between icon and label */
 }
 
-.skill-name {
-    font-size: 0.9em;
-    /* Adjust the size as needed */
-    color: black;
-    /* Adjust the text color as needed */
+@media screen and (max-width: 768px) {
+    .skills-section {
+        flex: 0 1 100%;
+        /* Takes full width on smaller screens */
+        margin: 10px 0;
+        /* Adjusted for vertical stacking */
+    }
 }
 
+
+
+
+
+
+
+/* #######################  LEARNING ################################## */
+
+
+.learning-box {
+    max-width: 80%;
+    margin: auto;
+    border: 2px solid black;
+    background-color: #f9f9f9;
+    color: black;
+    padding: 20px;
+    box-shadow: 10px 10px 5px grey;
+    border-radius: 15px;
+    /* font-family: 'Comic Sans MS', sans-serif; */
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+.first-letter {
+    font-size: 1.2em;
+    font-weight: 900;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+th {
+    text-align: center;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+}
+
+td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+td a {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+td a:hover {
+    background-color: #2980b9;
+}
+
+
+
 /* ####################  INTEREST  ############################# */
+#Interests {
+    /* padding: 6px 12px; */
+    background-color: white;
+}
 
 .interests-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 50px;
+    gap: 70px;
     /* Adjust the space between items */
     justify-items: center;
     /* Center items horizontally */
@@ -169,8 +280,8 @@
     /* Center items vertically */
     padding: 100px;
     /* Add some padding around the grid */
-   
-    border-left: 3px solid #51a8b2;
+
+    border-left: 3px solid #46cdd4;
 }
 
 .interest {
@@ -184,7 +295,7 @@
 }
 
 .interest-icon {
-    width: 50px;
+    width: 40px;
     /* Adjust the size as needed */
     height: auto;
     /* Maintain aspect ratio */
@@ -198,5 +309,3 @@
     color: black;
     /* Adjust the text color as needed */
 }
-
-
