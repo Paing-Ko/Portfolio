@@ -113,7 +113,7 @@ if (container) {
   rotateCarousel();
 
   // Rotate the carousel every 3 seconds
-  setInterval(rotateCarousel, 10000);
+  setInterval(rotateCarousel, 7000);
 }
 
 // Wait for the DOM to load
@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (isValid) {
       // If the form is valid, you might want to actually submit the form
-      // form.submit();
+      form.submit();
     }
   });
 });
@@ -204,3 +204,15 @@ function openTab(evt, tabName) {
 
 
 
+document.addEventListener("DOMContentLoaded", function () {
+  // Select all .card elements
+  var cards = document.querySelectorAll(".card");
+
+  // Add click event listener to each card
+  cards.forEach(function (card) {
+    card.addEventListener("click", function () {
+      // Toggle the 'flipped' class on click
+      card.classList.toggle("flipped");
+    });
+  });
+});
