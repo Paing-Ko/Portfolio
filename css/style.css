@@ -11,12 +11,13 @@ html {
     font-family: 'Consolas', 'Monaco', monospace;
     background-color: black;
     color: #E5E9F0;
+    padding-bottom: 20px;
 }
 
 
 
 .terminal {
-    
+
     box-sizing: border-box;
     border: 0.1px solid rgb(62, 56, 56);
     padding: 5px;
@@ -29,7 +30,7 @@ html {
     /* Adjust based on your layout */
     background-color: #020319;
     color: #E5E9F0;
-    
+
 }
 
 
@@ -140,7 +141,7 @@ html {
 }
 
 /* Add a separator before the last nav item */
-.nav-right .nav-item:last-child::before,
+.nav-right .nav-item::before,
 .github-link-footer .footer-item::before {
     content: '|';
     position: absolute;
@@ -308,7 +309,7 @@ html {
 
 .github-link .string {
     /* For the string with the link */
-   
+
     color: #059613;
     /* orange color */
 }
@@ -316,7 +317,7 @@ html {
 
 /* ############FOOTER######### */
 footer {
-    margin: 5px;
+    margin: 0px;
     padding: 10px;
     bottom: 0px;
     display: flex;
@@ -326,7 +327,8 @@ footer {
     color: #E5E9F0;
     border: 0.1px solid rgb(62, 56, 56);
     position: fixed;
-    width: calc(100% - 30px);
+    /* position: relative; */
+    width: calc(100% - 20px);
     /* Adjust this to account for the new margin */
     left: 10px;
     /* Add this to align with the new .terminal margin */
@@ -390,13 +392,15 @@ footer {
 .snippet {
     position: absolute;
     top: 0;
-    left: 50%; /* Align the left edge to the center of the carousel */
+    left: 50%;
+    /* Align the left edge to the center of the carousel */
     /* Start off the screen, so the snippets slide in from the bottom */
-    transform: translateX(-50%) translateZ(-300px) translateY(100vh); 
-    width: calc(100% - 50px); /* Full width minus some padding */
+    transform: translateX(-50%) translateZ(-300px) translateY(100vh);
+    width: calc(100% - 50px);
+    /* Full width minus some padding */
     transition: transform 5s, opacity 5s;
     /* Start completely transparent to ensure it's invisible */
-    opacity: 0; 
+    opacity: 0;
 }
 
 
@@ -475,6 +479,63 @@ footer {
 
 
 
+
+
+
+/* #################### RESPONSIVENESS ######################## */
+
+
+@media only screen and (max-width: 768px) {
+
+
+
+    .name-highlight {
+        font-size: 2em;
+    }
+
+    .left-content {
+
+        margin-top: 100px;
+    }
+
+    .dynamic-text {
+        /* margin-top: 0; */
+        font-size: 1.5rem;
+        margin-bottom: 50px;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+
+    /* CODE SNIPPET */
+    .carousel {
+        display: none;
+    }
+
+
+    /* FOOTER  */
+    .social-media,
+    .github-link-footer {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .footer-item {
+        padding: 5px 0;
+        /* Add some padding for better spacing */
+        display: block;
+        /* Stack the footer items */
+    }
+
+    .social-media span,
+    .github-link-footer .footer-item::before,
+    .footer-item:not(:last-child)::after,
+    .social-media .footer-item:last-child:after {
+        display: none;
+        /* Hide separators and text that might clutter on small screens */
+    }
+}
 
 
 
