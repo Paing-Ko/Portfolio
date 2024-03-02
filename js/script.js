@@ -202,8 +202,6 @@ function openTab(evt, tabName) {
   evt.currentTarget.className += " active";
 }
 
-
-
 document.addEventListener("DOMContentLoaded", function () {
   // Select all .card elements
   var cards = document.querySelectorAll(".card");
@@ -218,3 +216,13 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
+document.addEventListener("DOMContentLoaded", (event) => {
+  const hamburger = document.querySelector(".hamburger");
+  const navRight = document.querySelector(".nav-right");
+
+  hamburger.addEventListener("click", function () {
+    hamburger.classList.toggle("active"); // This will toggle the 'active' class on the hamburger
+    navRight.classList.toggle("is-active"); // This will toggle the 'is-active' class on navRight
+  });
+});
