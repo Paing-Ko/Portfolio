@@ -1,73 +1,101 @@
-const professions = [
-  "Doctor",
-  "Web Developer",
-  "Coffee Lover",
-  "Sports Enthusiast",
-];
-const typeEffectSpan = document.getElementById("type-effect");
-if (typeEffectSpan) {
-  const cursorSpan = document.createElement("span");
-  cursorSpan.classList.add("cursor");
-  cursorSpan.textContent = "|";
-  typeEffectSpan.parentNode.insertBefore(
-    cursorSpan,
-    typeEffectSpan.nextSibling
-  );
+// ####################    REFACTOR  ########################
+document.addEventListener("DOMContentLoaded", function () {
+  // Typing effect setup
+  setupTypingEffect();
 
-  let index = 0;
-  let professionIndex = 0;
-  let isDeleting = false;
-  let isPaused = false;
-  let pauseTime = 1000; // Time to pause after typing before deleting
+  // Navigation menu setup
+  setupNavigationMenu();
 
-  (function typeEffect() {
-    if (professionIndex === professions.length) {
-      professionIndex = 0; // Reset to start after the last word
-    }
+  // Code snippets carousel
+  setupCodeSnippetsCarousel();
 
-    if (!isDeleting && index <= professions[professionIndex].length) {
-      // Typing forward
-      typeEffectSpan.textContent = professions[professionIndex].substring(
-        0,
-        index++
-      );
-    }
+  // Dropdowns setup
+  setupDropdowns();
 
-    if (isDeleting && index >= 0) {
-      // Deleting
-      typeEffectSpan.textContent = professions[professionIndex].substring(
-        0,
-        index--
-      );
-    }
+  // Form validation
+  setupFormValidation();
 
-    if (!isDeleting && index === professions[professionIndex].length) {
-      // Word is fully typed - pause before deleting
-      isPaused = true;
-      setTimeout(() => {
-        isPaused = false;
-        isDeleting = true;
-        setTimeout(typeEffect, 200); // Start deleting shortly after pause
-      }, pauseTime);
-    } else if (isDeleting && index === 0) {
-      // Word is fully deleted - move to the next word
-      isDeleting = false;
-      professionIndex++;
-      setTimeout(typeEffect, 500); // Time before typing next word
-    }
 
-    if (!isPaused) {
-      setTimeout(typeEffect, isDeleting ? 100 : 200); // Typing speed
-    }
-  })();
+  // Card flipping
+  setupCardFlipping();
 
-  // Blinking cursor effect
-  setInterval(() => {
-    cursorSpan.style.opacity = cursorSpan.style.opacity === "0" ? "1" : "0";
-  }, 500); // Cursor blink speed
+
+});
+
+function setupTypingEffect() {
+  // ... Your existing typing effect code here ...
+  const professions = [
+    "Doctor",
+    "Web Developer",
+    "Coffee Lover",
+    "Sports Enthusiast",
+  ];
+  const typeEffectSpan = document.getElementById("type-effect");
+  if (typeEffectSpan) {
+    const cursorSpan = document.createElement("span");
+    cursorSpan.classList.add("cursor");
+    cursorSpan.textContent = "|";
+    typeEffectSpan.parentNode.insertBefore(
+      cursorSpan,
+      typeEffectSpan.nextSibling
+    );
+
+    let index = 0;
+    let professionIndex = 0;
+    let isDeleting = false;
+    let isPaused = false;
+    let pauseTime = 1000; // Time to pause after typing before deleting
+
+    (function typeEffect() {
+      if (professionIndex === professions.length) {
+        professionIndex = 0; // Reset to start after the last word
+      }
+
+      if (!isDeleting && index <= professions[professionIndex].length) {
+        // Typing forward
+        typeEffectSpan.textContent = professions[professionIndex].substring(
+          0,
+          index++
+        );
+      }
+
+      if (isDeleting && index >= 0) {
+        // Deleting
+        typeEffectSpan.textContent = professions[professionIndex].substring(
+          0,
+          index--
+        );
+      }
+
+      if (!isDeleting && index === professions[professionIndex].length) {
+        // Word is fully typed - pause before deleting
+        isPaused = true;
+        setTimeout(() => {
+          isPaused = false;
+          isDeleting = true;
+          setTimeout(typeEffect, 200); // Start deleting shortly after pause
+        }, pauseTime);
+      } else if (isDeleting && index === 0) {
+        // Word is fully deleted - move to the next word
+        isDeleting = false;
+        professionIndex++;
+        setTimeout(typeEffect, 500); // Time before typing next word
+      }
+
+      if (!isPaused) {
+        setTimeout(typeEffect, isDeleting ? 100 : 200); // Typing speed
+      }
+    })();
+
+    // Blinking cursor effect
+    setInterval(() => {
+      cursorSpan.style.opacity = cursorSpan.style.opacity === "0" ? "1" : "0";
+    }, 500); // Cursor blink speed
+  }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+function setupNavigationMenu() {
+  // ... Your existing navigation menu code here ...
   const navItems = document.querySelectorAll(
     ".nav-item:not(.nav-left .nav-item)"
   ); // Select nav-items except the one in nav-left
@@ -83,42 +111,43 @@ document.addEventListener("DOMContentLoaded", function () {
       this.classList.add("active");
     });
   });
-});
-
-const container = document.querySelector(".code-snippets-container");
-
-if (container) {
-  const snippets = container.querySelectorAll(".snippet");
-  let angle = 0;
-  const n = snippets.length;
-  const theta = 360 / n;
-
-  function rotateCarousel() {
-    angle = (angle + theta) % 360;
-    snippets.forEach((snippet, i) => {
-      snippet.style.transform = `rotateX(${
-        angle + i * theta
-      }deg) translateZ(150px)`;
-      // Adjust translateZ based on your layout
-
-      // Set opacity and scale based on the angle
-      const scale = Math.cos((((angle + i * theta) % 360) * Math.PI) / 180);
-      const opacity = scale < 0 ? 0.5 : 1;
-      snippet.style.opacity = opacity;
-      snippet.style.transform += ` scale(${opacity})`;
-    });
-  }
-
-  // Initialize the first rotation
-  rotateCarousel();
-
-  // Rotate the carousel every 3 seconds
-  setInterval(rotateCarousel, 7000);
 }
 
-// Wait for the DOM to load
-document.addEventListener("DOMContentLoaded", function () {
-  // Get all the dropdown buttons
+function setupCodeSnippetsCarousel() {
+  const container = document.querySelector(".code-snippets-container");
+
+  if (container) {
+    const snippets = container.querySelectorAll(".snippet");
+    let angle = 0;
+    const n = snippets.length;
+    const theta = 360 / n;
+
+    function rotateCarousel() {
+      angle = (angle + theta) % 360;
+      snippets.forEach((snippet, i) => {
+        snippet.style.transform = `rotateX(${
+          angle + i * theta
+        }deg) translateZ(150px)`;
+        // Adjust translateZ based on your layout
+
+        // Set opacity and scale based on the angle
+        const scale = Math.cos((((angle + i * theta) % 360) * Math.PI) / 180);
+        const opacity = scale < 0 ? 0.5 : 1;
+        snippet.style.opacity = opacity;
+        snippet.style.transform += ` scale(${opacity})`;
+      });
+    }
+
+    // Initialize the first rotation
+    rotateCarousel();
+
+    // Rotate the carousel every 3 seconds
+    setInterval(rotateCarousel, 7000);
+  }
+}
+
+function setupDropdowns() {
+  // ... Your existing dropdowns code here ...
   var dropdowns = document.querySelectorAll(".dropdown-btn");
 
   // Initially set dropdown content display to none
@@ -142,9 +171,10 @@ document.addEventListener("DOMContentLoaded", function () {
       this.classList.toggle("active");
     });
   });
-});
+}
 
-document.addEventListener("DOMContentLoaded", function () {
+function setupFormValidation() {
+  // ... Your existing form validation code here ...
   var form = document.getElementById("contactForm");
 
   form.noValidate = true; // Disables browser's default validation
@@ -177,9 +207,26 @@ document.addEventListener("DOMContentLoaded", function () {
       form.submit();
     }
   });
-});
+}
 
-// ######################ABOUT ME###################
+
+
+function setupCardFlipping() {
+  // ... Your existing card flipping code here ...
+  var cards = document.querySelectorAll(".card");
+
+  // Add click event listener to each card
+  cards.forEach(function (card) {
+    card.addEventListener("click", function () {
+      // Toggle the 'flipped' class on click
+      card.classList.toggle("flipped");
+    });
+  });
+}
+
+
+
+
 
 function openTab(evt, tabName) {
   // Declare all variables
@@ -202,34 +249,12 @@ function openTab(evt, tabName) {
   evt.currentTarget.className += " active";
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Select all .card elements
-  var cards = document.querySelectorAll(".card");
-
-  // Add click event listener to each card
-  cards.forEach(function (card) {
-    card.addEventListener("click", function () {
-      // Toggle the 'flipped' class on click
-      card.classList.toggle("flipped");
-    });
-  });
-});
-
-function setUpHamburgerMenu() {
+document.addEventListener("DOMContentLoaded", (event) => {
   const hamburger = document.querySelector(".hamburger");
   const navRight = document.querySelector(".nav-right");
 
-  function toggleMenu(event) {
-    event.preventDefault();
-    event.stopPropagation();
-    hamburger.classList.toggle("active");
-    navRight.classList.toggle("is-active");
-  }
-
-  // Listen for both click and touchstart events
-  hamburger.addEventListener("click", toggleMenu);
-  hamburger.addEventListener("touchstart", toggleMenu);
-}
-
-// Call the function after DOM content has loaded
-document.addEventListener("DOMContentLoaded", setUpHamburgerMenu);
+  hamburger.addEventListener("click", function () {
+    hamburger.classList.toggle("active"); // This will toggle the 'active' class on the hamburger
+    navRight.classList.toggle("is-active"); // This will toggle the 'is-active' class on navRight
+  });
+});
