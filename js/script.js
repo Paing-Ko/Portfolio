@@ -215,14 +215,13 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
-
 function setUpHamburgerMenu() {
   const hamburger = document.querySelector(".hamburger");
   const navRight = document.querySelector(".nav-right");
 
-  // Function to toggle menu
-  function toggleMenu() {
+  function toggleMenu(event) {
+    event.preventDefault();
+    event.stopPropagation();
     hamburger.classList.toggle("active");
     navRight.classList.toggle("is-active");
   }
