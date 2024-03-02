@@ -221,8 +221,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
   const hamburger = document.querySelector(".hamburger");
   const navRight = document.querySelector(".nav-right");
 
-  hamburger.addEventListener("click", function () {
-    hamburger.classList.toggle("active"); // This will toggle the 'active' class on the hamburger
-    navRight.classList.toggle("is-active"); // This will toggle the 'is-active' class on navRight
-  });
+  // Function to toggle menu
+  function toggleMenu() {
+    hamburger.classList.toggle("active");
+    navRight.classList.toggle("is-active");
+  }
+
+  // Listen for both click and touch events
+  hamburger.addEventListener("click", toggleMenu);
+  hamburger.addEventListener("touchstart", toggleMenu);
 });
