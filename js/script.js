@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-document.addEventListener("DOMContentLoaded", (event) => {
+function setUpHamburgerMenu() {
   const hamburger = document.querySelector(".hamburger");
   const navRight = document.querySelector(".nav-right");
 
@@ -227,7 +227,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
     navRight.classList.toggle("is-active");
   }
 
-  // Listen for both click and touch events
+  // Listen for both click and touchstart events
   hamburger.addEventListener("click", toggleMenu);
   hamburger.addEventListener("touchstart", toggleMenu);
-});
+}
+
+// Call the function after DOM content has loaded
+document.addEventListener("DOMContentLoaded", setUpHamburgerMenu);
