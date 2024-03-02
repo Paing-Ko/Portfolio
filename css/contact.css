@@ -9,6 +9,7 @@
     border-right: 0.1px solid rgb(62, 56, 56);
     /* Adjust the color to fit your design */
 }
+
 /* Add a pseudo-element to the first child of the main-content to create a vertical line */
 
 
@@ -245,4 +246,57 @@ ol.code-snippet li:before {
 
 .method {
     color: red;
+}
+
+
+
+/* ############### RESPONSIVENESS ############### */
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr;
+        /* Stack content vertically */
+        gap: 20px;
+        /* Add some space between stacked items */
+        font-size: 0.9em;/
+    }
+
+    .main-content>div:first-child {
+        border-right: none;
+        /* Remove the border-right on smaller screens */
+    }
+
+    .left-sidebar,
+    .dropdown-content,
+    .dropdown-btn {
+        font-size: 0.9em;
+        /* Adjust font size for smaller screens */
+        padding: 10px;
+        /* Adjust padding for smaller screens */
+    }
+
+    .contact-form {
+        margin: 20px auto;
+        /* Center the form with automatic horizontal margins */
+        padding: 20px;
+        min-width: auto;
+        /* Allow the form to adjust its width */
+        width: 90%;
+        /* Make the form width responsive to screen size */
+    }
+
+    .form-field input[type="submit"] {
+        font-size: 0.9em;
+        /* Adjust the font size as needed */
+        /* Other existing styles */
+    }
+
+
+}
+
+@media (max-width: 600px) {
+
+    /* Hide code snippets on very small screens */
+    ol.code-snippet {
+        display: none;
+    }
 }
