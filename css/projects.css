@@ -6,7 +6,7 @@
     gap: 5px;
     /* Controls the space between cards */
     padding: 20px;
-
+    padding-bottom: 30px;
     max-height: 90vh;
     overflow-y: auto;
     /* background-color: rgb(248, 253, 255); */
@@ -38,7 +38,7 @@
 
 /* Alternatively, if you specifically want to target only the last card for extra spacing */
 .card:last-child {
-    margin-bottom: 60px;
+    margin-bottom: 100px;
     /* Adjust this value as needed to ensure the last card is not covered by the footer */
 }
 
@@ -234,4 +234,3 @@
 
 
 /* ############### RESPONSIVENESS ############## */
-
