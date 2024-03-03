@@ -204,17 +204,29 @@ td {
 }
 
 td a {
-    display: inline-block;
+    display: block;
     padding: 5px 10px;
     background-color: #3498db;
     color: #fff;
     text-decoration: none;
     border-radius: 4px;
+    
 }
 
 
 td a:hover {
     background-color: #2980b9;
+}
+
+.center-link a {
+    display: block;
+    /* or keep it if you've already defined it */
+    text-align: center;
+    /* Center the text */
+    width: 100%;
+    /* Make the <a> tag fill the <td> */
+    margin: auto;
+    /* This will work together with display: block */
 }
 
 /* ####################  SKILL  ############################# */
