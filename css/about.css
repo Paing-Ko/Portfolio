@@ -86,7 +86,7 @@
 /* Wrapper for the bio text and image */
 .bio-wrapper {
     display: grid;
-    grid-template-columns: 2.5fr 1fr;
+    grid-template-columns: 3.5fr 1fr;
     align-items: start;
     justify-content: center;
     max-height: 76vh;
@@ -102,7 +102,7 @@
     /* Mimics the pre-formatting to some extent */
     word-wrap: break-word;
     /* Ensures the text fits within the container */
-    font-size: 14px;
+    font-size: 15px;
     margin: 0;
     padding: 25px;
     border-left: 3px solid #FD7E08;
@@ -470,7 +470,7 @@ td a:hover {
         padding: 30px;
         text-align: justify;
         /* Justify text for better readability */
-        font-size: 12px;
+        font-size: 13px;
         /* Adjust font size for smaller screens */
     }
 
