@@ -357,13 +357,64 @@ td a:hover {
         /* Slightly smaller font size */
     }
 
+    /* BIO */
+
+    .bio-text,
+    .learning,
+    .skills,
+    .interests-grid {
+        overflow-y: auto;
+        /* Add scroll to bio-text if content overflows */
+        max-height: 65vh;
+    }
+
+    .bio-wrapper {
+        grid-template-columns: 1fr;
+        /* Use a single column layout on small screens */
+    }
+
+    .bio-image {
+        display: none;
+        /* Hide the image on smaller screens */
+    }
+
+    .bio-text {
+        padding: 15px;
+        /* Reduced padding for smaller screens */
+        text-align: justify;
+        /* Justify text for better readability */
+        font-size: 14px;
+        /* Slightly adjust font size if necessary */
+        /* Adjust based on your design's needs */
+    }
 
     /* LEARNING  */
+
+
     .learning-box {
         padding: 15px;
         /* Slightly reduce padding */
-        font-size: 0.9em;
+        font-size: 0.8em;
         /* Adjust font size for readability */
+    }
+
+    table,
+    th,
+    td {
+        font-size: 0.8em;
+        /* Smaller font size for table contents */
+    }
+
+    /* Make table scrollable on small screens */
+    #courses-table {
+        overflow-x: auto;
+
+    }
+
+    .learning {
+        overflow-y: auto;
+        /* Add scroll to bio-text if content overflows */
+        max-height: 65vh;
     }
 
     table,
@@ -379,6 +430,7 @@ td a:hover {
     }
 
     /* SKILLS */
+
 
     .skills-section {
         flex: 0 1 100%;
@@ -431,48 +483,3 @@ td a:hover {
 }
 
 
-
-/* Responsive adjustments */
-@media screen and (max-width: 768px) {
-    .learning-box {
-        padding: 15px;
-        /* Slightly reduce padding */
-        font-size: 0.8em;
-        /* Adjust font size for readability */
-    }
-
-    table,
-    th,
-    td {
-        font-size: 0.8em;
-        /* Smaller font size for table contents */
-    }
-
-    /* Make table scrollable on small screens */
-    #courses-table {
-        overflow-x: auto;
-    }
-}
-
-
-@media screen and (max-width: 768px) {
-
-    .bio-wrapper {
-
-        grid-template-columns: 1fr;
-    }
-
-    .bio-image {
-        display: none;
-    }
-
-    .bio-text {
-        padding: 30px;
-        text-align: justify;
-        /* Justify text for better readability */
-        font-size: 13px;
-        /* Adjust font size for smaller screens */
-    }
-
-
-}
