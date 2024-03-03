@@ -15,11 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // Form validation
   setupFormValidation();
 
-
   // Card flipping
   setupCardFlipping();
-
-
 });
 
 function setupTypingEffect() {
@@ -209,8 +206,6 @@ function setupFormValidation() {
   });
 }
 
-
-
 function setupCardFlipping() {
   // ... Your existing card flipping code here ...
   var cards = document.querySelectorAll(".card");
@@ -223,10 +218,6 @@ function setupCardFlipping() {
     });
   });
 }
-
-
-
-
 
 function openTab(evt, tabName) {
   // Declare all variables
@@ -258,3 +249,19 @@ document.addEventListener("DOMContentLoaded", (event) => {
     navRight.classList.toggle("is-active"); // This will toggle the 'is-active' class on navRight
   });
 });
+
+document
+  .getElementById("toggleCoursesTable")
+  .addEventListener("click", function () {
+    var coursesTable = document.getElementById("courses-table");
+    if (coursesTable.style.display === "none") {
+      coursesTable.style.display = "block"; // Show the table
+      this.textContent = "Hide Courses"; // Change button text to Hide Courses
+    } else {
+      coursesTable.style.display = "none"; // Hide the table
+      this.textContent = "View Courses"; // Change button text back to View Courses
+    }
+  });
+
+
+

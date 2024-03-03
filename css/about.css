@@ -93,39 +93,128 @@
     overflow: auto;
 }
 
-/* Add your additional styling for Bio, Skills, and Interests here */
-
 
 .bio-text {
     font-family: 'Consolas', 'Monaco', monospace;
-
     background-color: #0D0D0D;
-    white-space: pre-wrap;
-    /* Preserves spacing and line breaks */
-    font-size: 14px;
-    /* Adjust to match your design */
-
     color: rgb(143, 147, 148);
-    /* Text color, similar to the rest of your design */
+    white-space: pre-line;
+    /* Mimics the pre-formatting to some extent */
+    word-wrap: break-word;
+    /* Ensures the text fits within the container */
+    font-size: 14px;
     margin: 0;
-    /* Removes default margin from <pre> */
     padding: 25px;
-    /* Padding inside the <pre> block */
     border-left: 3px solid #FD7E08;
-    /* Left border for visual accent */
-    flex-grow: 1;
-    /* Allows the text to grow and fill the space */
-    /* margin-right: 20px; */
+    overflow-wrap: break-word;
+    /* Prevents long strings from overflowing */
 }
 
 .bio-image {
     /* Adjust the width as necessary to fit your layout */
-    width: 200px;
+    max-width: 200px;
     /* Example width, you can use percentage or fixed sizes */
     align-self: center;
     /* Align the image vertically */
     /* margin-left: 20px; */
     /* Add some space between the text and the image */
+}
+
+
+
+/* #######################  LEARNING ################################## */
+#Learning {
+    background-color: #0D0D0D;
+    color: #fff;
+    /* Ensures text is readable on the dark background */
+}
+
+.learning {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* Adjust this as needed */
+    border-left: 3px solid #3498db;
+    max-height: 76vh;
+    overflow: auto;
+    padding-left: 10px;
+
+}
+
+
+
+.learning-box {
+    max-width: 90%;
+    /* Allows for a bit more fluidity on smaller screens */
+    margin: 10px auto;
+    border: 2px solid #222;
+    /* Subtle border for dark mode */
+    background-color: #f9f9f9;
+    color: #000;
+    padding: 20px;
+    box-shadow: 5px 5px 5px #333;
+    /* Soften the shadow for a cleaner look */
+    border-radius: 15px;
+    text-align: justify;
+    /* margin: 20px; */
+}
+
+
+
+.first-letter {
+    font-size: 1.2em;
+    font-weight: 900;
+}
+
+#toggleCoursesTable {
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    /* display: block; */
+    /* Ensures it's properly aligned */
+    margin: 10px auto;
+
+    /* Centers the button */
+}
+
+#toggleCoursesTable:hover {
+    background-color: #2980b9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+
+th {
+    text-align: center;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+}
+
+td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+td a {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+
+td a:hover {
+    background-color: #2980b9;
 }
 
 /* ####################  SKILL  ############################# */
@@ -143,7 +232,7 @@
     justify-content: space-around;
     /* Adjust this as needed */
     border-left: 3px solid white;
-    height: 60vh;
+    height: 76vh;
     overflow: auto;
     padding-left: 10px;
 }
@@ -193,78 +282,6 @@
     /* Space between icon and label */
 }
 
-@media screen and (max-width: 768px) {
-    .skills-section {
-        flex: 0 1 100%;
-        /* Takes full width on smaller screens */
-        margin: 10px 0;
-        /* Adjusted for vertical stacking */
-    }
-}
-
-
-
-
-
-
-
-/* #######################  LEARNING ################################## */
-#Learning {
-background-color: #0D0D0D;
-}
-
-.learning-box {
-    max-width: 70%;
-    margin: auto;
-    border: 2px solid black;
-    background-color: #f9f9f9;
-    color: black;
-    padding: 20px;
-    box-shadow: 10px 10px 5px grey;
-    border-radius: 15px;
-    /* font-family: 'Comic Sans MS', sans-serif; */
-    text-align: justify;
-    margin-bottom: 20px;
-}
-
-.first-letter {
-    font-size: 1.2em;
-    font-weight: 900;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 30px;
-}
-
-th {
-    text-align: center;
-    padding: 10px;
-    background-color: #3498db;
-    color: #fff;
-}
-
-td {
-    padding: 10px;
-    border: 1px solid #ddd;
-}
-
-td a {
-    display: inline-block;
-    padding: 5px 10px;
-    background-color: #3498db;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 4px;
-}
-
-td a:hover {
-    background-color: #2980b9;
-}
-
-
-
 /* ####################  INTEREST  ############################# */
 #Interests {
     /* padding: 6px 12px; */
@@ -274,15 +291,16 @@ td a:hover {
 .interests-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 70px;
+    gap: 50px;
     /* Adjust the space between items */
     justify-items: center;
     /* Center items horizontally */
     align-items: center;
     /* Center items vertically */
-    padding: 100px;
+    padding: 50px 100px;
     /* Add some padding around the grid */
-
+    height: 76vh;
+    overflow: auto;
     border-left: 3px solid #46cdd4;
 }
 
@@ -310,4 +328,151 @@ td a:hover {
     /* Adjust the size as needed */
     color: black;
     /* Adjust the text color as needed */
+}
+
+
+
+/* ################## RESPONSIVENESS ################## */
+@media (max-width: 768px) {
+    .tab-container {
+        width: 100%;
+        /* Make the tab container take the full width */
+        box-sizing: border-box;
+        /* Ensures padding doesn't add to the width */
+    }
+
+    .tab {
+        flex-direction: row;
+        /* Stack tabs vertically */
+    }
+
+    .tab button {
+        width: 100%;
+        /* Full width buttons for easier clicking */
+    }
+
+    /* Optional: Adjust font size for smaller screens */
+    .tab button {
+        font-size: 14px;
+        /* Slightly smaller font size */
+    }
+
+
+    /* LEARNING  */
+    .learning-box {
+        padding: 15px;
+        /* Slightly reduce padding */
+        font-size: 0.9em;
+        /* Adjust font size for readability */
+    }
+
+    table,
+    th,
+    td {
+        font-size: 0.8em;
+        /* Smaller font size for table contents */
+    }
+
+    /* Make table scrollable on small screens */
+    #courses-table {
+        overflow-x: auto;
+    }
+
+    /* SKILLS */
+
+    .skills-section {
+        flex: 0 1 100%;
+        /* Takes full width on smaller screens */
+        margin: 0;
+        /* Adjusted for vertical stacking */
+    }
+
+    .skills-section h2 {
+        color: #ddd;
+        font-size: 1em;
+        margin-bottom: 0px;
+    }
+
+    .skills-list li {
+        font-size: 0.9em;
+        /* Adjust font size for better readability on small screens */
+    }
+
+    .skill-icon {
+        width: 20px;
+        /* Smaller icons for smaller screens */
+    }
+
+
+    /* INTERESTS */
+
+    .interests-grid {
+        gap: 20px;
+        /* Reduce the gap for smaller screens */
+        padding: 20px;
+        /* Reduce the overall padding for smaller screens */
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        /* Adjust the min size for smaller screens */
+    }
+
+    .interest-icon {
+        width: 30px;
+        /* Smaller icons on small screens */
+    }
+
+    .interest-name {
+        font-size: 0.8em;
+        /* Slightly smaller text on small screens */
+    }
+
+
+
+
+}
+
+
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .learning-box {
+        padding: 15px;
+        /* Slightly reduce padding */
+        font-size: 0.8em;
+        /* Adjust font size for readability */
+    }
+
+    table,
+    th,
+    td {
+        font-size: 0.8em;
+        /* Smaller font size for table contents */
+    }
+
+    /* Make table scrollable on small screens */
+    #courses-table {
+        overflow-x: auto;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .bio-wrapper {
+
+        grid-template-columns: 1fr;
+    }
+
+    .bio-image {
+        display: none;
+    }
+
+    .bio-text {
+        padding: 30px;
+        text-align: justify;
+        /* Justify text for better readability */
+        font-size: 12px;
+        /* Adjust font size for smaller screens */
+    }
+
+
 }

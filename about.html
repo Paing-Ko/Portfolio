@@ -60,7 +60,7 @@
 
             <div id="Bio" class="tabcontent">
                 <div class="bio-wrapper">
-                    <pre class="bio-text">
+                    <div class="bio-text">
                     1  /**
                     2  * My name is Paing Phyo Ko.
                     3  * I am a web developer and UI/UX designer from London.
@@ -97,7 +97,7 @@
                    34  * pursuing photography, traveling, and doing sports in my free time.
                    35  * These hobbies inspire my creativity and help me stay
                    36  **/
-                </pre>
+                    </div>
                     <img src="./images/octocat-1686318380542.PNG" alt="octocat" class="bio-image">
                 </div>
             </div>
@@ -108,6 +108,7 @@
             <!--learning content here -->
 
             <div id="Learning" class="tabcontent">
+                <button id="toggleCoursesTable">View Courses</button>
                 <div class="learning">
                     <p class="learning-box">
                         <span class="first-letter">Embarking</span><strong> my coding journey</strong>, I initially cut
@@ -124,7 +125,8 @@
                         doubts and
                         strengthen my understanding.
                     </p>
-                    <div id="courses-table">
+
+                    <div id="courses-table" style="display: none;">
                         <table>
                             <tr>
                                 <th>Course</th>
@@ -136,9 +138,9 @@
                                 <td>CS50’s introduction to technology for students who don’t (yet!) consider themselves
                                     computer
                                     persons</td>
-                                <td><a href="./cert_projects/CS50T.png" target="_blank">See Certificate</a></td>
-                            </tr>
-                            <tr>
+                                    <td><a href="./cert_projects/CS50T.png" target="_blank">See Certificate</a></td>
+                                </tr>
+                                <tr>
                                 <td>CS50x</td>
                                 <td>An introduction to the intellectual enterprises of computer science and the art of
                                     programming</td>
@@ -159,24 +161,25 @@
                                 <td>Responsive Web Design</td>
                                 <td><a href="https://www.freecodecamp.org/certification/Paing_Ko/responsive-web-design"
                                         target="_blank">See Certificate</a></td>
-                            </tr>
-                            <tr>
-                                <td>freeCodeCamp</td>
-                                <td>JavaScript Algorithms and Data Structures</td>
-                                <td><a href="https://www.freecodecamp.org/certification/Paing_Ko/javascript-algorithms-and-data-structures"
-                                        target="_blank">See Certificate</a></td>
-                            </tr>
-                            <tr>
-                                <td>OneTech</td>
-                                <td>Intro To Coding</td>
-                                <td><a href="./cert_projects/onetech.png" target="_blank">See Certificate</a></td>
-                            </tr>
-
-
-
+                                    </tr>
+                                    <tr>
+                                        <td>freeCodeCamp</td>
+                                        <td>JavaScript Algorithms and Data Structures</td>
+                                        <td><a href="https://www.freecodecamp.org/certification/Paing_Ko/javascript-algorithms-and-data-structures"
+                                            target="_blank">See Certificate</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>OneTech</td>
+                                            <td>Intro To Coding</td>
+                                            <td><a href="./cert_projects/onetech.png" target="_blank">See Certificate</a></td>
+                                        </tr>
+                                        
+                                        
+                                        
                         </table>
                     </div>
 
+                  
 
 
                 </div>
