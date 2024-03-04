@@ -1,26 +1,18 @@
-// ####################    REFACTOR  ########################
 document.addEventListener("DOMContentLoaded", function () {
-  // Typing effect setup
-  setupTypingEffect();
-
-  // Navigation menu setup
-  setupNavigationMenu();
-
-  // Code snippets carousel
-  setupCodeSnippetsCarousel();
-
-  // Dropdowns setup
-  setupDropdowns();
-
-  // Form validation
-  setupFormValidation();
-
-  // Card flipping
-  setupCardFlipping();
+  setupPage();
 });
 
+function setupPage() {
+  setupTypingEffect();
+  setupNavigationMenu();
+  setupCodeSnippetsCarousel();
+  setupDropdowns();
+  setupFormValidation();
+  setupCardFlipping();
+}
+
+
 function setupTypingEffect() {
-  // ... Your existing typing effect code here ...
   const professions = [
     "Doctor",
     "Web Developer",
@@ -41,15 +33,14 @@ function setupTypingEffect() {
     let professionIndex = 0;
     let isDeleting = false;
     let isPaused = false;
-    let pauseTime = 1000; // Time to pause after typing before deleting
+    let pauseTime = 1000;
 
     (function typeEffect() {
       if (professionIndex === professions.length) {
-        professionIndex = 0; // Reset to start after the last word
+        professionIndex = 0;
       }
 
       if (!isDeleting && index <= professions[professionIndex].length) {
-        // Typing forward
         typeEffectSpan.textContent = professions[professionIndex].substring(
           0,
           index++
@@ -57,7 +48,6 @@ function setupTypingEffect() {
       }
 
       if (isDeleting && index >= 0) {
-        // Deleting
         typeEffectSpan.textContent = professions[professionIndex].substring(
           0,
           index--
@@ -65,46 +55,42 @@ function setupTypingEffect() {
       }
 
       if (!isDeleting && index === professions[professionIndex].length) {
-        // Word is fully typed - pause before deleting
         isPaused = true;
         setTimeout(() => {
           isPaused = false;
           isDeleting = true;
-          setTimeout(typeEffect, 200); // Start deleting shortly after pause
+          setTimeout(typeEffect, 200);
         }, pauseTime);
       } else if (isDeleting && index === 0) {
-        // Word is fully deleted - move to the next word
         isDeleting = false;
         professionIndex++;
-        setTimeout(typeEffect, 500); // Time before typing next word
+        setTimeout(typeEffect, 500);
       }
 
       if (!isPaused) {
-        setTimeout(typeEffect, isDeleting ? 100 : 200); // Typing speed
+        setTimeout(typeEffect, isDeleting ? 100 : 200);
       }
     })();
 
-    // Blinking cursor effect
     setInterval(() => {
       cursorSpan.style.opacity = cursorSpan.style.opacity === "0" ? "1" : "0";
-    }, 500); // Cursor blink speed
+    }, 500);
   }
 }
 
 function setupNavigationMenu() {
-  // ... Your existing navigation menu code here ...
   const navItems = document.querySelectorAll(
     ".nav-item:not(.nav-left .nav-item)"
-  ); // Select nav-items except the one in nav-left
+  );
 
   navItems.forEach((item) => {
     item.addEventListener("click", function () {
-      // Remove active class from all nav items
+  
       navItems.forEach((item) => {
         item.classList.remove("active");
       });
 
-      // Add active class to clicked item
+   
       this.classList.add("active");
     });
   });
@@ -125,9 +111,7 @@ function setupCodeSnippetsCarousel() {
         snippet.style.transform = `rotateX(${
           angle + i * theta
         }deg) translateZ(150px)`;
-        // Adjust translateZ based on your layout
-
-        // Set opacity and scale based on the angle
+       
         const scale = Math.cos((((angle + i * theta) % 360) * Math.PI) / 180);
         const opacity = scale < 0 ? 0.5 : 1;
         snippet.style.opacity = opacity;
@@ -135,64 +119,60 @@ function setupCodeSnippetsCarousel() {
       });
     }
 
-    // Initialize the first rotation
     rotateCarousel();
 
-    // Rotate the carousel every 3 seconds
     setInterval(rotateCarousel, 7000);
   }
 }
 
 function setupDropdowns() {
-  // ... Your existing dropdowns code here ...
+
   var dropdowns = document.querySelectorAll(".dropdown-btn");
 
-  // Initially set dropdown content display to none
   dropdowns.forEach(function (btn) {
     var content = btn.nextElementSibling;
-    content.style.display = "none"; // Explicitly set display to none on page load
+    content.style.display = "none";
   });
 
-  // Add click event to dropdown buttons
   dropdowns.forEach(function (btn) {
     btn.addEventListener("click", function () {
-      // Get the next element, which is the dropdown content
+   
       var content = this.nextElementSibling;
-      // Toggle visibility
+    
       if (content.style.display === "none" || content.style.display === "") {
         content.style.display = "block";
       } else {
         content.style.display = "none";
       }
-      // Toggle the active class to change the arrow direction
+     
       this.classList.toggle("active");
     });
   });
 }
 
 function setupFormValidation() {
-  // ... Your existing form validation code here ...
+
   var form = document.getElementById("contactForm");
 
-  form.noValidate = true; // Disables browser's default validation
+  form.noValidate = true; 
 
   form.addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent the form from submitting for now
+    event.preventDefault(); 
     var inputs = form.querySelectorAll("input, textarea");
     var isValid = true;
 
-    // Function to hide error message
+
     function hideErrorMessage(errorElement) {
       setTimeout(function () {
         errorElement.style.display = "none";
-      }, 3000); // Hide after 3 seconds (3000 milliseconds)
+      }, 3000); 
     }
 
     inputs.forEach(function (input) {
-      var error = input.nextElementSibling; // Assumes error message is immediately after input
+      var error = input.nextElementSibling; 
       if (input.validity.valueMissing) {
         error.style.display = "block";
-        hideErrorMessage(error); // Call the function to hide the message after 3 seconds
+        hideErrorMessage(error); 
         isValid = false;
       } else {
         error.style.display = "none";
@@ -200,53 +180,49 @@ function setupFormValidation() {
     });
 
     if (isValid) {
-      // If the form is valid, you might want to actually submit the form
+   
       form.submit();
     }
   });
 }
 
 function setupCardFlipping() {
-  // ... Your existing card flipping code here ...
   var cards = document.querySelectorAll(".card");
 
-  // Add click event listener to each card
   cards.forEach(function (card) {
     card.addEventListener("click", function () {
-      // Toggle the 'flipped' class on click
       card.classList.toggle("flipped");
     });
   });
 }
 
+
+
 function openTab(evt, tabName) {
-  // Declare all variables
   var i, tabcontent, tablinks;
 
-  // Get all elements with class="tabcontent" and hide them
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
   }
 
-  // Get all elements with class="tablinks" and remove the class "active"
   tablinks = document.getElementsByClassName("tablinks");
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
-
-  // Show the current tab, and add an "active" class to the button that opened the tab
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
 }
+
+
 
 document.addEventListener("DOMContentLoaded", (event) => {
   const hamburger = document.querySelector(".hamburger");
   const navRight = document.querySelector(".nav-right");
 
   hamburger.addEventListener("click", function () {
-    hamburger.classList.toggle("active"); // This will toggle the 'active' class on the hamburger
-    navRight.classList.toggle("is-active"); // This will toggle the 'is-active' class on navRight
+    hamburger.classList.toggle("active"); 
+    navRight.classList.toggle("is-active");
   });
 });
 
@@ -255,13 +231,10 @@ document
   .addEventListener("click", function () {
     var coursesTable = document.getElementById("courses-table");
     if (coursesTable.style.display === "none") {
-      coursesTable.style.display = "block"; // Show the table
-      this.textContent = "Hide Courses"; // Change button text to Hide Courses
+      coursesTable.style.display = "block"; 
+      this.textContent = "Hide Courses"; 
     } else {
-      coursesTable.style.display = "none"; // Hide the table
-      this.textContent = "View Courses"; // Change button text back to View Courses
+      coursesTable.style.display = "none"; 
+      this.textContent = "View Courses"; 
     }
   });
-
-
-
