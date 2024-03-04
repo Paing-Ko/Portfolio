@@ -308,6 +308,20 @@ html {
     /* orange color */
 }
 
+.github-link .string .github-url {
+    color: #059613;
+    /* Keep the link color consistent with the .string class */
+    text-decoration: none;
+    /* Remove underline to maintain the code-like appearance */
+}
+
+.github-link .string .github-url:hover {
+    text-decoration: underline;
+    /* Add an underline on hover to indicate it's clickable */
+    color: #04B404;
+    /* Optional: Change color on hover to make it more obvious */
+}
+
 
 /* ############FOOTER######### */
 footer {

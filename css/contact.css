@@ -125,6 +125,7 @@
 .form-field {
     margin-bottom: 20px;
     position: relative;
+
 }
 
 .form-field label {
@@ -154,7 +155,7 @@
     /* Error messages hidden by default */
 }
 
-.form-field input[type="submit"] {
+.form-field .submit-message {
     font-family: 'Consolas', 'Monaco', monospace;
     font-size: 1rem;
     background-color: #0c0e24;
@@ -164,23 +165,14 @@
     margin-top: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    width: 100%;
 }
 
-.form-field input[type="submit"]:hover {
+.form-field .submit-message:hover {
     /* background-color: #E5E9F0; */
     color: rgb(47, 159, 163);
 }
 
-@media (max-width: 768px) {
-    .main-content {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-form {
-        margin: 20px;
-        padding: 20px;
-    }
-}
 
 /* Additional styles for responsiveness and aesthetics may be required */
 
@@ -250,6 +242,8 @@ ol.code-snippet li:before {
 
 
 
+
+
 /* ############### RESPONSIVENESS ############### */
 @media (max-width: 768px) {
     .main-content {
@@ -284,7 +278,7 @@ ol.code-snippet li:before {
         /* Make the form width responsive to screen size */
     }
 
-    .form-field input[type="submit"] {
+    .form-field .submit-message {
         font-size: 0.9em;
         /* Adjust the font size as needed */
         /* Other existing styles */
