@@ -59,7 +59,7 @@
 
 .card-front::after {
     content: '';
-    background: url('/portfolio/images/repeat.png') no-repeat center center;
+    background: url('../images/repeat.png') no-repeat center center;
     background-size: contain;
     position: absolute;
     width: 25px;
@@ -120,7 +120,7 @@
 }
 
 .external-link-icon {
-    background: url('/portfolio/images/external-link.png') no-repeat center center;
+    background: url('../images/external-link.png') no-repeat center center;
     background-size: contain;
     position: absolute;
     width: 25px;
