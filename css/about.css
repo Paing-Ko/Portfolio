@@ -1,10 +1,9 @@
-/* Additional styles for the about section */
 * {
     font-family: var(--font-family-main);
 }
 
 .about-section {
-    padding: 20px;
+    padding: 3px 0px;
 }
 
 .tab-container {
@@ -35,7 +34,7 @@
 
 
 .tab button:hover {
-    color: #FD7E08;
+    color: var(--color-accent);
 }
 
 .tab button.active {
@@ -71,8 +70,8 @@
 
 .bio-wrapper {
     display: grid;
-    grid-template-columns: 3.5fr 1fr;
-    align-items: start;
+    grid-template-columns: 3fr 1fr;
+    align-items: center;
     justify-content: center;
     max-height: 76vh;
     overflow: auto;
@@ -80,20 +79,25 @@
 
 
 .bio-text {
+    border-left: 3px solid var(--color-accent);
+    padding: 5px 50px;
+}
+
+.bio-text p {
     background-color: var(--color-tab);
-    color: rgb(143, 147, 148);
-    white-space: pre-line;
-    word-wrap: break-word;
+    color: rgb(242, 246, 247);
     font-size: 15px;
     margin: 0;
-    padding: 25px;
-    border-left: 3px solid var(--color-accent);
-    overflow-wrap: break-word;
+    padding: 3px 5px;
+    border-left: none;
+    text-align: justify;
 }
+
+
 
 .bio-image {
     max-width: 200px;
-    align-self: center;
+    align-self:center;
 }
 
 
@@ -303,6 +307,10 @@ td a:hover {
         font-size: 14px;
     }
 
+    .tabcontent {
+        padding: 1px;
+    }
+
     /* BIO */
     .bio-text,
     .learning,
@@ -321,12 +329,32 @@ td a:hover {
     }
 
     .bio-text {
-        padding: 15px;
-        text-align: justify;
+        padding: 5px;
         font-size: 14px;
+        text-align: justify;
+        border-left: 1px solid var(--color-accent);
+        background-color: #f3f3f3;
+        color: #333;
+        font-family: 'Courier New', monospace;
+    }
+
+    .bio-text p {
+        background-color: rgb(242, 246, 247);
+        color: var(--color-tab);
+        font-size: 14px;
+        margin: 0;
+        padding: 3px 20px;
+        border-left: none;
+        line-height: 1.3em;
     }
 
     /* LEARNING  */
+
+    .learning {
+        border-left: 1px solid #3498db;
+        padding: 0px;
+    }
+
     .learning-box {
         padding: 15px;
         font-size: 0.8em;
@@ -360,6 +388,11 @@ td a:hover {
     }
 
     /* SKILLS */
+
+    .skills {
+        border-left: 1px solid white;
+    }
+
     .skills-section {
         flex: 0 1 100%;
         margin: 0;
@@ -385,6 +418,7 @@ td a:hover {
         gap: 20px;
         padding: 20px;
         grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        border-left: 1px solid #46cdd4;
     }
 
     .interest-icon {
