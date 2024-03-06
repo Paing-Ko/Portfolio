@@ -18,6 +18,11 @@
     width: 100%;
 }
 
+.left-sidebar {
+    color: rgb(47, 159, 163);
+    width: 100%;
+    position: relative;
+}
 
 
 .dropdown {
@@ -32,9 +37,20 @@
     padding: 10px;
 }
 
+.dropdown-content {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    display: none;
+    background: #000;
+    padding: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
 .dropdown-content a {
     color: rgb(47, 159, 163);
-    padding: 12px 16px;
+    padding: 12px 0px;
     text-decoration: none;
     display: block;
     transition: color 0.3s ease;
@@ -65,6 +81,7 @@
     outline: none;
 }
 
+
 .dropdown-btn span {
     margin-left: 10px;
     margin-bottom: -5px;
@@ -79,6 +96,8 @@
 .dropdown-btn.active::before {
     transform: rotate(90deg);
 }
+
+
 
 
 .contact-form {
@@ -211,12 +230,18 @@ ol.code-snippet li:before {
         padding: 10px;
     }
 
+    .dropdown-content {
+
+        width: calc(100% - 20px);
+    }
+
     .contact-form {
         margin: 20px auto;
         padding: 20px;
         min-width: auto;
         width: 90%;
     }
+
 
     .form-field .submit-message {
         font-size: 0.9em;
