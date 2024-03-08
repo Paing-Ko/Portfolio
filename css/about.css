@@ -342,6 +342,7 @@ td a:hover {
     }
 
 
+
     .bio-wrapper {
         grid-template-columns: 1fr;
         border-left: 1px solid var(--color-accent);
@@ -358,6 +359,7 @@ td a:hover {
 
         color: #333;
         font-family: 'Courier New', monospace;
+
     }
 
     .bio-text h3 {
@@ -460,6 +462,15 @@ td a:hover {
 
     .interest-name {
         font-size: 0.8em;
+    }
+
+    .bio-text,
+    .skills,
+    .interests-grid {
+        padding-bottom: 50px;
+    }
+    #courses-table {
+    padding-bottom: 50px;
     }
 
 }
