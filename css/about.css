@@ -59,36 +59,50 @@
     background-color: #46cdd4;
 }
 
+
+
 .tabcontent {
-    padding: 6px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    text-align: center;
+    max-height: 76vh;
+    overflow: auto;
     background-color: var(--color-tab);
-    color: #0e2959;
-    color: var(--color-primary);
     display: none;
 }
 
+
+#Bio {
+    border-left: 3px solid var(--color-accent);
+}
+
+.bio-text {
+    padding: 50px 100px;
+}
 
 .bio-wrapper {
     display: grid;
     grid-template-columns: 3fr 1fr;
     align-items: center;
     justify-content: center;
-    max-height: 76vh;
     overflow: auto;
 }
 
-
-.bio-text {
-    border-left: 3px solid var(--color-accent);
-    padding: 5px 50px;
+.bio-text h3 {
+    margin: 10px 0;
+    font-size: 17px;
+    color: #93e3f3;
 }
+
 
 .bio-text p {
     background-color: var(--color-tab);
     color: rgb(242, 246, 247);
     font-size: 15px;
     margin: 0;
-    padding: 3px 5px;
+    padding: 0px 5px;
     border-left: none;
     text-align: justify;
 }
@@ -103,19 +117,21 @@
 
 
 /* #######################  LEARNING ################################## */
+
+
 #Learning {
-    background-color: var(--color-tab);
-    color: #fff;
+    border-left: 3px solid #3498db;
 }
 
 .learning {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    border-left: 3px solid #3498db;
-    max-height: 76vh;
-    overflow: auto;
+    justify-content: center;
     padding-left: 10px;
+    display: inline-block;
+    text-align: left;
+    max-width: 100%;
+
 
 }
 
@@ -134,6 +150,11 @@
 }
 
 
+#course-table {
+    border-left: 3px solid #3498db;
+
+}
+
 
 .first-letter {
     font-size: 1.2em;
@@ -148,6 +169,8 @@
     border-radius: 5px;
     cursor: pointer;
     margin: 10px auto;
+    display: inline-block;
+    margin: 0px 0px 10px 0px;
 }
 
 #toggleCoursesTable:hover {
@@ -157,7 +180,7 @@
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 40px;
+    margin: 5px;
 }
 
 
@@ -200,14 +223,14 @@ td a:hover {
 
 
 #Skills {
-    background-color: var(--color-tab);
+    border-left: 3px solid white;
 }
 
 .skills {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    border-left: 3px solid white;
+
     height: 76vh;
     overflow: auto;
     padding-left: 10px;
@@ -255,7 +278,7 @@ td a:hover {
 
 /* ####################  INTEREST  ############################# */
 #Interests {
-    background-color: var(--color-tab);
+    border-left: 3px solid #46cdd4;
 }
 
 .interests-grid {
@@ -267,7 +290,7 @@ td a:hover {
     padding: 50px 100px;
     height: 76vh;
     overflow: auto;
-    border-left: 3px solid #46cdd4;
+
 }
 
 .interest {
@@ -311,17 +334,17 @@ td a:hover {
         padding: 1px;
     }
 
-    /* BIO */
-    .bio-text,
-    .learning,
-    .skills,
-    .interests-grid {
-        overflow-y: auto;
-        max-height: 65vh;
+
+    #Bio,
+    #Skills,
+    #Interests {
+        border-left: none;
     }
+
 
     .bio-wrapper {
         grid-template-columns: 1fr;
+        border-left: 1px solid var(--color-accent);
     }
 
     .bio-image {
@@ -332,10 +355,13 @@ td a:hover {
         padding: 5px;
         font-size: 14px;
         text-align: justify;
-        border-left: 1px solid var(--color-accent);
+
         color: #333;
         font-family: 'Courier New', monospace;
     }
+
+
+
 
     .bio-text p {
         background-color: rgb(242, 246, 247);
@@ -350,9 +376,13 @@ td a:hover {
 
     /* LEARNING  */
 
-    .learning {
+    #Learning {
         border-left: 1px solid #3498db;
-        padding: 0px;
+
+    }
+
+    .learning {
+        border-left: none;
     }
 
     .learning-box {
