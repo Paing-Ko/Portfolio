@@ -316,18 +316,22 @@ td a:hover {
     .tab-container {
         width: 100%;
         box-sizing: border-box;
+        overflow-x: auto;
     }
 
     .tab {
-        flex-direction: row;
+        flex-wrap: nowrap;
     }
 
     .tab button {
-        width: 100%;
-    }
-
-    .tab button {
+        flex: 1 0 auto;
+        padding: 14px 6px;
         font-size: 14px;
+    }
+
+    .tab button.active {
+        flex: 1 0 auto;
+        box-sizing: border-box;
     }
 
     .tabcontent {
@@ -469,8 +473,9 @@ td a:hover {
     .interests-grid {
         padding-bottom: 150px;
     }
+
     #courses-table {
-    padding-bottom: 150px;
+        padding-bottom: 150px;
     }
 
 }
