@@ -150,6 +150,15 @@
 }
 
 
+.learning-box a {
+    text-decoration: none; 
+    color: #3498db;
+}
+
+.learning-box a:hover {
+    text-decoration: underline;
+}
+
 #course-table {
     border-left: 3px solid #3498db;
 
@@ -230,7 +239,7 @@ td a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-
+    text-align: left;
     height: 76vh;
     overflow: auto;
     padding-left: 10px;
