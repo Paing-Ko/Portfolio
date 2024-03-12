@@ -11,13 +11,14 @@ function setupPage() {
   setupCardFlipping();
 }
 
-
 function setupTypingEffect() {
   const professions = [
-    "Doctor",
-    "Web Developer",
-    "Coffee Lover",
+    "Career Changer",
+    "Junior Developer",
+    "Former Medic",
     "Sports Enthusiast",
+    "Coffee Aficionado",
+    "Nature Buff"
   ];
   const typeEffectSpan = document.getElementById("type-effect");
   if (typeEffectSpan) {
@@ -85,12 +86,10 @@ function setupNavigationMenu() {
 
   navItems.forEach((item) => {
     item.addEventListener("click", function () {
-  
       navItems.forEach((item) => {
         item.classList.remove("active");
       });
 
-   
       this.classList.add("active");
     });
   });
@@ -111,7 +110,7 @@ function setupCodeSnippetsCarousel() {
         snippet.style.transform = `rotateX(${
           angle + i * theta
         }deg) translateZ(150px)`;
-       
+
         const scale = Math.cos((((angle + i * theta) % 360) * Math.PI) / 180);
         const opacity = scale < 0 ? 0.5 : 1;
         snippet.style.opacity = opacity;
@@ -126,7 +125,6 @@ function setupCodeSnippetsCarousel() {
 }
 
 function setupDropdowns() {
-
   var dropdowns = document.querySelectorAll(".dropdown-btn");
 
   dropdowns.forEach(function (btn) {
@@ -136,43 +134,40 @@ function setupDropdowns() {
 
   dropdowns.forEach(function (btn) {
     btn.addEventListener("click", function () {
-   
       var content = this.nextElementSibling;
-    
+
       if (content.style.display === "none" || content.style.display === "") {
         content.style.display = "block";
       } else {
         content.style.display = "none";
       }
-     
+
       this.classList.toggle("active");
     });
   });
 }
 
 function setupFormValidation() {
-
   var form = document.getElementById("contactForm");
 
-  form.noValidate = true; 
+  form.noValidate = true;
 
   form.addEventListener("submit", function (event) {
-    event.preventDefault(); 
+    event.preventDefault();
     var inputs = form.querySelectorAll("input, textarea");
     var isValid = true;
-
 
     function hideErrorMessage(errorElement) {
       setTimeout(function () {
         errorElement.style.display = "none";
-      }, 3000); 
+      }, 3000);
     }
 
     inputs.forEach(function (input) {
-      var error = input.nextElementSibling; 
+      var error = input.nextElementSibling;
       if (input.validity.valueMissing) {
         error.style.display = "block";
-        hideErrorMessage(error); 
+        hideErrorMessage(error);
         isValid = false;
       } else {
         error.style.display = "none";
@@ -180,13 +175,10 @@ function setupFormValidation() {
     });
 
     if (isValid) {
-   
       form.submit();
     }
   });
 }
-
-
 
 function setupCardFlipping() {
   var cards = document.querySelectorAll(".card");
@@ -203,7 +195,6 @@ function setupCardFlipping() {
     card.addEventListener(
       "touchstart",
       function (e) {
-
         e.preventDefault();
         toggleFlip(card);
       },
@@ -211,7 +202,6 @@ function setupCardFlipping() {
     );
   });
 }
-
 
 function openTab(evt, tabName) {
   var i, tabcontent, tablinks;
@@ -229,14 +219,12 @@ function openTab(evt, tabName) {
   evt.currentTarget.className += " active";
 }
 
-
-
 document.addEventListener("DOMContentLoaded", (event) => {
   const hamburger = document.querySelector(".hamburger");
   const navRight = document.querySelector(".nav-right");
 
   hamburger.addEventListener("click", function () {
-    hamburger.classList.toggle("active"); 
+    hamburger.classList.toggle("active");
     navRight.classList.toggle("is-active");
   });
 });
@@ -246,10 +234,10 @@ document
   .addEventListener("click", function () {
     var coursesTable = document.getElementById("courses-table");
     if (coursesTable.style.display === "none") {
-      coursesTable.style.display = "block"; 
-      this.textContent = "Hide Courses"; 
+      coursesTable.style.display = "block";
+      this.textContent = "Hide Courses";
     } else {
-      coursesTable.style.display = "none"; 
-      this.textContent = "View Courses"; 
+      coursesTable.style.display = "none";
+      this.textContent = "View Courses";
     }
   });
