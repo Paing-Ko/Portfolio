@@ -154,22 +154,12 @@
     width: 95%;
 }
 
-
-.card:hover .card-front {
+.card.flipped .card-front {
     transform: rotateY(180deg);
 }
 
-.card:hover .card-back {
+.card.flipped .card-back {
     transform: rotateY(360deg);
-}
-
-
-.card:not(:hover) .card-front {
-    transform: rotateY(0deg);
-}
-
-.card:not(:hover) .card-back {
-    transform: rotateY(180deg);
 }
 
 

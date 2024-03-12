@@ -186,16 +186,31 @@ function setupFormValidation() {
   });
 }
 
+
+
 function setupCardFlipping() {
   var cards = document.querySelectorAll(".card");
 
+  function toggleFlip(card) {
+    card.classList.toggle("flipped");
+  }
+
   cards.forEach(function (card) {
     card.addEventListener("click", function () {
-      card.classList.toggle("flipped");
+      toggleFlip(card);
     });
+
+    card.addEventListener(
+      "touchstart",
+      function (e) {
+
+        e.preventDefault();
+        toggleFlip(card);
+      },
+      { passive: false }
+    );
   });
 }
-
 
 
 function openTab(evt, tabName) {
