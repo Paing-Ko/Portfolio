@@ -13,9 +13,9 @@ function setupPage() {
 
 function setupTypingEffect() {
   const professions = [
-    "Career Changer",
-    "Junior Developer",
+    "Career Switcher",
     "Former Medic",
+    "Junior Developer",
     "Sports Enthusiast",
     "Coffee Aficionado",
     "Nature Buff"
