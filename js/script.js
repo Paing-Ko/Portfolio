@@ -16,8 +16,8 @@ function setupTypingEffect() {
     "Career Switcher",
     "Former Medic",
     "Junior Developer",
-    "Sports Enthusiast",
-    "Coffee Aficionado",
+    "Sports Lover",
+    "Coffee Enthusiast",
     "Nature Buff"
   ];
   const typeEffectSpan = document.getElementById("type-effect");
